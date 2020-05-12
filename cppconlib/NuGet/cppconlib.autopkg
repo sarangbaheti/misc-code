@@ -1,0 +1,32 @@
+﻿nuget{
+    nuspec{
+        id = cppconlib;
+        version : 1.0.1;
+        title: C++ Console Utilities;
+        authors: {Marius Bancila};
+        owners: {Marius Bancila};
+        licenseUrl: "https://cppconlib.codeplex.com/license";
+        projectUrl: "https://cppconlib.codeplex.com/";
+        iconUrl: "https://download-codeplex.sec.s-msft.com/Download?ProjectName=cppconlib&DownloadId=721216&Build=20717"
+        requireLicenseAcceptance:false;
+        summary:"cppconlib provides a small C++11 template library for manipulating the settings of a Windows console (colors, text position, input mode, etc.).";
+        description:@"cppconlib provides a small C++11 template library for manipulating the settings of a Windows console (colors, text position, input mode, etc.).
+		
+The library contains a single header file (conmanip.h) and the API consists on a set of template classes and functions (in namespace conmanip).
+
+The library works with Visual Studio 2012 or newer.";
+        releaseNotes:Improved constant correctness and others.;
+        copyright: Copyright 2013;
+        tags: { native, C++, Windows, console, cppconlib, utilities };
+    }
+
+    files {
+        #defines {
+            CPPCONLIB_BASE   = ..\;
+        }
+        
+        include += { ${CPPCONLIB_BASE}Includes\conmanip.h };
+        
+        docs += { ${CPPCONLIB_BASE}docs\cppconlib-info.txt };
+    }
+}
