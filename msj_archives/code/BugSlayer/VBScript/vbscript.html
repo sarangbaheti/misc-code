@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Uhhh, VBScript is kewl</TITLE>
+<META NAME="Template" CONTENT="G:\MSOffice\Office\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BGCOLOR="#00ffff">
+
+<B><FONT SIZE=6><P ALIGN="CENTER">This is John's </FONT><U><FONT SIZE=6 COLOR="#0000ff">Very Lame</U> </FONT><FONT SIZE=6>VBScript page to show calling the TraceSrv DCOM Service. </P>
+</B></FONT><I><P>Special Note:</I> If you configure TraceSrv to run through DCOM on another machine, Internet Explorer will properly create the TraceSrv object and you can call through it just fine. However, when you <U>exit</U> Internet Explorer 3.02 (4.70.1300), Internet Explorer will crash with a bad memory read at EIP 0x77A83450 on Intel machines at and address FP 0x776E6020 on ALPHA machines. The crash is in SECURITY.DLL.  I have not tried this on Internet Explorer 4.0 betas.</P>
+<P><HR></P>
+<FORM>
+<P ALIGN="CENTER">
+<INPUT TYPE="BUTTON" MAXLENGTH="75" WIDTH="225" NAME="BtnOne" VALUE="Click me to see the message:  'Hey Pal!  I'm button one!'">
+</P>
+<P ALIGN="CENTER">
+<INPUT TYPE="BUTTON" MAXLENGTH="75" WIDTH="225" NAME="BtnTwo" VALUE="Click here to see the message:  'Dogs like trucks'">
+</P>
+<P><SCRIPT LANGUAGE="VBScript"><!--
+	Dim g_TraceObj
+	set g_TraceObj = CreateObject ( "Trace.Trace.1" )
+	g_TraceObj.Trace ( "Tommy, can you see me? Tommy, can you see me?" + vbCRLF )
+	
+	Sub BtnOne_OnClick
+		g_TraceObj.Trace ( "Hey! I'm Button One!" + vbCRLF )
+	End Sub
+	Sub BtnTwo_OnClick
+		g_TraceObj.Trace ( "Dogs like trucks - Or maybe just Java" + vbCRLF )
+	End Sub
+--></SCRIPT></FORM></BODY>
+</HTML>

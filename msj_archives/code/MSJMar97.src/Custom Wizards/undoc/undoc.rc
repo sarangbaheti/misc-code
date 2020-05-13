@@ -1,0 +1,216 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "UNDOC AppWizard\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "UNDOC\0"
+            VALUE "LegalCopyright", "Copyright © 1994\0"
+            VALUE "OriginalFilename", "UNDOC.DLL\0"
+            VALUE "ProductName", "MFC Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CUSTOM1 DIALOG DISCARDABLE  0, 0, 303, 197
+STYLE DS_CONTROL | WS_CHILD | WS_TABSTOP
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "What kind(s) of view(s) do you want to occupy the client area of your application window?",
+                    IDC_STATIC,148,11,149,21
+    CONTROL         "&Tree view",IDB_TREEPANE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,157,31,47,10
+    CONTROL         "&List view",IDB_DATAPANE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,157,44,43,10
+    CONTROL         "&Standard view",IDB_STDPANE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,157,57,61,10
+    GROUPBOX        "Tool Bar Options",IDC_STATIC,148,80,149,39
+    CONTROL         "&Create standard tool bar",IDB_TOOLBAR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,157,92,91,10
+    CONTROL         "&Dockable",IDB_DOCKABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,157,105,47,10
+    CONTROL         "&Use tool tips",IDB_TOOLTIPS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,229,105,55,10
+    GROUPBOX        "Status Bar Options",IDC_STATIC,148,137,149,39
+    CONTROL         "C&reate standard status bar",IDB_STATUSBAR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,157,148,99,10
+    CONTROL         "&Key indicators",IDB_INDICATORS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,157,162,60,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEMPLATE
+//
+
+NEWPROJ.INF             TEMPLATE DISCARDABLE    "template\\newproj.inf"
+CONFIRM.INF             TEMPLATE DISCARDABLE    "template\\confirm.inf"
+DATAPANE.CPP            TEMPLATE DISCARDABLE    "Template\\datapane.cpp"
+DATAPANE.H              TEMPLATE DISCARDABLE    "Template\\datapane.h"
+MAINWND.CPP             TEMPLATE DISCARDABLE    "Template\\mainwnd.cpp"
+MAINWND.H               TEMPLATE DISCARDABLE    "Template\\mainwnd.h"
+RESOURCE.H              TEMPLATE DISCARDABLE    "Template\\resource.h"
+ROOT.CLW                TEMPLATE DISCARDABLE    "Template\\root.clw"
+ROOT.CPP                TEMPLATE DISCARDABLE    "Template\\root.cpp"
+ROOT.H                  TEMPLATE DISCARDABLE    "Template\\root.h"
+ROOT.RC                 TEMPLATE DISCARDABLE    "Template\\root.rc"
+STDAFX.CPP              TEMPLATE DISCARDABLE    "Template\\stdafx.cpp"
+STDAFX.H                TEMPLATE DISCARDABLE    "Template\\stdafx.h"
+STDPANE.CPP             TEMPLATE DISCARDABLE    "Template\\stdpane.cpp"
+STDPANE.H               TEMPLATE DISCARDABLE    "Template\\stdpane.h"
+TREEPANE.CPP            TEMPLATE DISCARDABLE    "Template\\treepane.cpp"
+TREEPANE.H              TEMPLATE DISCARDABLE    "Template\\treepane.h"
+TOOLBAR.BMP             TEMPLATE DISCARDABLE    "Template\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_UNDOC               ICON    DISCARDABLE     "res\\undoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TYSY_TNDNSY         BITMAP  FIXED IMPURE    "res\\tysy_tnd.bmp"
+IDB_TYSY_TYDNSN         BITMAP  FIXED IMPURE    "res\\tysy_tyd.bmp"
+IDB_TYSY_TNDYSN         BITMAP  FIXED IMPURE    "res\\bmp00001.bmp"
+IDB_TYSY_TYDYSN         BITMAP  FIXED IMPURE    "res\\bmp00002.bmp"
+IDB_TYSY_TYDNSY         BITMAP  FIXED IMPURE    "res\\bmp00003.bmp"
+IDB_TYSY_TNDYSY         BITMAP  FIXED IMPURE    "res\\bmp00004.bmp"
+IDB_TYSY_TNDNSN         BITMAP  FIXED IMPURE    "res\\bmp00005.bmp"
+IDB_TYSY_TYDYSY         BITMAP  FIXED IMPURE    "res\\bmp00006.bmp"
+IDB_TNSY_TNDNSN         BITMAP  FIXED IMPURE    "res\\tnsy_tnd.bmp"
+IDB_TNSY_TNDNSY         BITMAP  FIXED IMPURE    "res\\bmp00007.bmp"
+IDB_TNSY_TNDYSN         BITMAP  FIXED IMPURE    "res\\bmp00008.bmp"
+IDB_TNSY_TNDYSY         BITMAP  FIXED IMPURE    "res\\bmp00009.bmp"
+IDB_TNSY_TYDNSN         BITMAP  FIXED IMPURE    "res\\tnsy_tyd.bmp"
+IDB_TNSY_TYDNSY         BITMAP  FIXED IMPURE    "res\\bmp00010.bmp"
+IDB_TYSN_TYDYSN         BITMAP  FIXED IMPURE    "res\\tysn_tyd.bmp"
+IDB_TNSY_TYDYSY         BITMAP  FIXED IMPURE    "res\\bmp00011.bmp"
+IDB_TNSN_TNDNSN         BITMAP  FIXED IMPURE    "res\\tnsn_tnd.bmp"
+IDB_TNSN_TNDNSY         BITMAP  FIXED IMPURE    "res\\bmp00012.bmp"
+IDB_TNSN_TNDYSN         BITMAP  FIXED IMPURE    "res\\bmp00013.bmp"
+IDB_TNSN_TNDYSY         BITMAP  FIXED IMPURE    "res\\bmp00014.bmp"
+IDB_TNSN_TYDNSN         BITMAP  FIXED IMPURE    "res\\tnsn_tyd.bmp"
+IDB_TNSN_TYDNSY         BITMAP  FIXED IMPURE    "res\\bmp00015.bmp"
+IDB_TNSN_TYDYSY         BITMAP  FIXED IMPURE    "res\\bmp00016.bmp"
+IDB_TYSN_TNDNSN         BITMAP  FIXED IMPURE    "res\\tysn_tnd.bmp"
+IDB_TYSN_TNDNSY         BITMAP  FIXED IMPURE    "res\\bmp00017.bmp"
+IDB_TYSN_TNDYSN         BITMAP  FIXED IMPURE    "res\\bmp00018.bmp"
+IDB_TYSN_TNDYSY         BITMAP  FIXED IMPURE    "res\\bmp00019.bmp"
+IDB_TYSN_TYDNSN         BITMAP  FIXED IMPURE    "res\\bmp00020.bmp"
+IDB_TYSN_TYDNSY         BITMAP  FIXED IMPURE    "res\\bmp00021.bmp"
+IDB_TNSY_TYDYSN         BITMAP  FIXED IMPURE    "res\\bmp00022.bmp"
+IDB_TYSN_TYDYSY         BITMAP  FIXED IMPURE    "res\\bmp00023.bmp"
+IDB_TNSN_TYDYSN         BITMAP  FIXED IMPURE    "res\\bmp00024.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "afxres.rc"  // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

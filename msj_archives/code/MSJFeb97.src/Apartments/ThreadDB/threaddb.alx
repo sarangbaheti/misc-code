@@ -1,0 +1,111 @@
+
+<SCRIPT LANGUAGE="VBScript">
+<!--
+
+rem Variable to be store customer object
+
+dim foo
+
+rem This function called when "Start Search" button clicked.
+rem Call StartSearch method on ThreadDB control
+
+Sub CommandButton1_Click()
+  ThreadDB1.StartSearch (444)
+end sub
+
+rem This function called when ThreadDB control fires SearchFinished
+rem event. Set customer's first and last names into edit controls.
+rem Save Customer object for future use in demo.
+
+Sub ThreadDB1_SearchFinished(CustomerObj)
+  set foo = CustomerObj
+  TextBox2.Text = CustomerObj.LastName
+  TextBox3.Text = CustomerObj.FirstName
+end sub
+
+rem This function called "Refresh" button clicked.  Refresh
+rem customer's names from stored object
+
+Sub CommandButton2_Click()
+ TextBox2.Text = foo.LastName
+ TextBox3.Text = foo.FirstName
+end sub
+
+
+-->
+</SCRIPT>
+<DIV ID="threaddb" STYLE="LAYOUT:FIXED;WIDTH:477pt;HEIGHT:272pt;">
+    <OBJECT ID="TextBox1"
+     CLASSID="CLSID:8BD21D10-EC42-11CE-9E0D-00AA006002F3" STYLE="TOP:41pt;LEFT:8pt;WIDTH:107pt;HEIGHT:17pt;TABINDEX:0;ZINDEX:0;">
+        <PARAM NAME="VariousPropertyBits" VALUE="746604571">
+        <PARAM NAME="Size" VALUE="3775;600">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    </OBJECT>
+    <OBJECT ID="Label1"
+     CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:25pt;LEFT:8pt;WIDTH:74pt;HEIGHT:17pt;ZINDEX:1;">
+        <PARAM NAME="Caption" VALUE="Social Security #:">
+        <PARAM NAME="Size" VALUE="2611;600">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    </OBJECT>
+    <OBJECT ID="TextBox2"
+     CLASSID="CLSID:8BD21D10-EC42-11CE-9E0D-00AA006002F3" STYLE="TOP:91pt;LEFT:8pt;WIDTH:107pt;HEIGHT:17pt;TABINDEX:2;ZINDEX:2;">
+        <PARAM NAME="VariousPropertyBits" VALUE="746604571">
+        <PARAM NAME="Size" VALUE="3775;600">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    </OBJECT>
+    <OBJECT ID="TextBox3"
+     CLASSID="CLSID:8BD21D10-EC42-11CE-9E0D-00AA006002F3" STYLE="TOP:140pt;LEFT:8pt;WIDTH:107pt;HEIGHT:17pt;TABINDEX:3;ZINDEX:3;">
+        <PARAM NAME="VariousPropertyBits" VALUE="746604571">
+        <PARAM NAME="Size" VALUE="3775;600">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    </OBJECT>
+    <OBJECT ID="Label2"
+     CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:74pt;LEFT:8pt;WIDTH:74pt;HEIGHT:16pt;ZINDEX:4;">
+        <PARAM NAME="Caption" VALUE="Last Name:">
+        <PARAM NAME="Size" VALUE="2611;564">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    </OBJECT>
+    <OBJECT ID="Label3"
+     CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:124pt;LEFT:8pt;WIDTH:74pt;HEIGHT:17pt;ZINDEX:5;">
+        <PARAM NAME="Caption" VALUE="First Name">
+        <PARAM NAME="Size" VALUE="2611;600">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    </OBJECT>
+    <OBJECT ID="CommandButton1"
+     CLASSID="CLSID:D7053240-CE69-11CD-A777-00DD01143C57" STYLE="TOP:41pt;LEFT:157pt;WIDTH:66pt;HEIGHT:25pt;TABINDEX:6;ZINDEX:6;">
+        <PARAM NAME="Caption" VALUE="Start Search">
+        <PARAM NAME="Size" VALUE="2328;882">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+        <PARAM NAME="ParagraphAlign" VALUE="3">
+    </OBJECT>
+    <OBJECT ID="Label4"
+     CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:0pt;LEFT:17pt;WIDTH:380pt;HEIGHT:17pt;ZINDEX:7;">
+        <PARAM NAME="Caption" VALUE="Enter Social Security number and press &quot;Start Search&quot; to look up client.">
+        <PARAM NAME="Size" VALUE="13406;600">
+        <PARAM NAME="FontHeight" VALUE="240">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    </OBJECT>
+    <OBJECT ID="ThreadDB1"
+     CLASSID="CLSID:7BF3C963-21D6-11D0-A77F-000000000000" STYLE="TOP:124pt;LEFT:157pt;WIDTH:75pt;HEIGHT:38pt;ZINDEX:8;">
+        <PARAM NAME="_Version" VALUE="65536">
+        <PARAM NAME="_ExtentX" VALUE="2646">
+        <PARAM NAME="_ExtentY" VALUE="1341">
+        <PARAM NAME="_StockProps" VALUE="0">
+    </OBJECT>
+    <OBJECT ID="CommandButton2"
+     CLASSID="CLSID:D7053240-CE69-11CD-A777-00DD01143C57" STYLE="TOP:74pt;LEFT:157pt;WIDTH:66pt;HEIGHT:25pt;TABINDEX:9;ZINDEX:9;">
+        <PARAM NAME="Caption" VALUE="Refresh">
+        <PARAM NAME="Size" VALUE="2328;882">
+        <PARAM NAME="FontCharSet" VALUE="0">
+        <PARAM NAME="FontPitchAndFamily" VALUE="2">
+        <PARAM NAME="ParagraphAlign" VALUE="3">
+    </OBJECT>
+</DIV>

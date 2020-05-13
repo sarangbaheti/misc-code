@@ -1,0 +1,65 @@
+/*----------------------------------------------------------------------
+John Robbins
+Microsoft Systems Journal, December 1997 - Bugslayer Column!
+----------------------------------------------------------------------*/
+// The string resources for the TraceView program.
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+    // The application name.
+    1000        "TraceView"
+
+    // The menu items.
+    2000        "&File"
+    2001        "Save &As"
+    2002        "E&xit"
+
+    2100        "&Edit"
+    2101        "&Copy"
+    2102        "&Select All"
+    2103        "C&lear"
+    2104        "&Find..."
+    2105        "Find &Previous"
+    2106        "Find &Next"
+
+    2200        "&View"
+    2201        "&Toolbar"
+    2202        "Status &Bar"
+    2203        "&On Top"
+    2204        "&Font..."
+
+    2300        "&Trace"
+    2301        "Show &Time Stamp"
+    2302        "Show &Item Number"
+    2303        "Show &Process ID"
+    2304        "Show &ODS at Server"
+    2305        "&Add CRLF"
+
+    2400        "&Help"
+    2401        "&About TraceView"
+
+    // The toolbar tooltips.
+    2500        "Save As"
+    2501        "Copy"
+    2502        "Find"
+    2503        "Find Prev"
+    2504        "Find Next"
+    2505        "Show Time Stamp"
+    2506        "Show Item Number"
+    2507        "Show Process ID"
+    2508        "Show ODS at Server"
+    2509        "Add CRLF"
+
+    // The find dialog items.
+    2600        "Find What"
+    2601        "Find Next"
+    2602        "Cancel"
+    2603        "Match Case"
+    2604        "Direction"
+    2605        "Up"
+    2606        "Down"
+    2607        "Find"
+
+
+END

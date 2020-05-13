@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{C1262E41-0186-11D1-B292-00AA004206E4} = s 'TraceSrv'
+        'TraceSrv.EXE'
+		{
+            val AppID = s {C1262E41-0186-11D1-B292-00AA004206E4}
+        }
+	}
+}

@@ -1,0 +1,22 @@
+[COMPILER]
+[FILES]
+[STATE]
+SCREEN: 1152 864 77 0 1075 836 -1 -1 N 0 31 0 50
+CWD: d:\dev\column\dec97\sourcecode\traceview
+FILEHIST: 9
+d:\dev\column\dec97\sourcecode\tracesrv\FastBSTR.h
+d:\dev\column\dec97\sourcecode\traceview\TraceView.rc
+d:\dev\column\dec97\sourcecode\traceview\frmAbout.frm
+d:\dev\column\dec97\sourcecode\traceview\frmFind.frm
+d:\dev\column\dec97\sourcecode\traceview\frmMain.frm
+d:\dev\column\dec97\sourcecode\traceview\ResourceConstants.bas
+d:\dev\column\dec97\sourcecode\traceview\Resources.bas
+d:\dev\column\dec97\sourcecode\traceview\WIN32API.bas
+d:\dev\column\dec97\sourcecode\traceview\Main.bas
+BOOKMARK: 0
+PUSHTAG: 0 1
+PRINTER: 2
+
+
+TOOLBARS: 1
+tbform1 13035 300

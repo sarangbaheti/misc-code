@@ -1,0 +1,163 @@
+; INF file for Talking Clock installation
+
+[Add.Code]
+wavctrl.ocx=wavctrl.ocx
+mfc40.dll=mfc40.dll
+1.wav=1.wav
+2.wav=2.wav
+3.wav=3.wav
+4.wav=4.wav
+5.wav=5.wav
+6.wav=6.wav
+7.wav=7.wav
+8.wav=8.wav
+9.wav=9.wav
+10.wav=10.wav
+11.wav=11.wav
+12.wav=12.wav
+13.wav=13.wav
+14.wav=14.wav
+15.wav=15.wav
+16.wav=16.wav
+17.wav=17.wav
+18.wav=18.wav
+19.wav=19.wav
+20.wav=20.wav
+30.wav=30.wav
+40.wav=40.wav
+50.wav=50.wav
+and.wav=and.wav
+its.wav=its.wav
+oh.wav=oh.wav
+oc.wav=oc.wav
+sec.wav=sec.wav
+secs.wav=secs.wav
+
+[wavctrl.ocx]
+; lines below specify that the specified circ3.ocx (clsid, version) needs to be installed on
+; the system. If doesn't exist already, can be downloaded from the given location (a .CAB)
+file=http://joshuat-d/wavctrl.cab
+clsid={CLSID:D7053240-CE69-11CD-A777-00DD01143C57}
+
+[mfc40.dll]
+; leaving the file location empty specifies that the installation
+; needs mfc40 (version 4,0,0,5), but it should not be downloaded.
+; if this file is not already present on the client machine, component download fails
+file=
+FileVersion=4,0,0,5
+
+[1.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[2.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[3.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[4.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[5.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[6.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[7.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[8.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[9.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[10.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[11.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[12.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[13.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[14.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[15.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[16.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[17.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[18.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[19.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[20.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[30.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[40.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[50.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[and.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[its.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[oh.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[oc.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[sec.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir
+
+[secs.wav]
+file=http://joshuat-d/wavctrl.cab
+DestDir=10     ; 10 = Windows dir, 11= Win System dir

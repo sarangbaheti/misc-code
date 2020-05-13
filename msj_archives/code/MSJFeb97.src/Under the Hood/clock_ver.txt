@@ -1,0 +1,90 @@
+COMCTL32.dll  
+  CompanyName Microsoft Corporation
+  FileDescription Custom Controls Library
+  FileVersion 4.70
+  InternalName COMMCTRL
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename COMMCTRL.DLL
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.70
+SHELL32.dll   
+  CompanyName Microsoft Corporation
+  FileDescription Windows Shell Common Dll
+  FileVersion 4.00
+  InternalName SHELL32
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename SHELL32.DLL
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+RPCRT4.dll    
+  CompanyName Microsoft Corporation
+  FileDescription Remote Procedure Call Runtime
+  FileVersion 4.00
+  InternalName rpcrt4.dll
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename rpcrt4.dll
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+ADVAPI32.dll  
+  CompanyName Microsoft Corporation
+  FileDescription Advanced Windows 32 Base API
+  FileVersion 4.00
+  InternalName advapi32.dll
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename advapi32.dll
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+GDI32.dll     
+  CompanyName Microsoft Corporation
+  FileDescription GDI Client DLL
+  FileVersion 4.00
+  InternalName gdi32
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename gdi32
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+USER32.dll    
+  CompanyName Microsoft Corporation
+  FileDescription Windows NT USER API Client DLL
+  FileVersion 4.00
+  InternalName user32
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename user32
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+KERNEL32.dll  
+  CompanyName Microsoft Corporation
+  FileDescription Windows NT BASE API Client DLL
+  FileVersion 4.00
+  InternalName kernel32
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename kernel32
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+ntdll.dll     
+  CompanyName Microsoft Corporation
+  FileDescription NT Layer DLL
+  FileVersion 4.00
+  InternalName ntdll.dll
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename ntdll.dll
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+comdlg32.dll  
+  CompanyName Microsoft Corporation
+  FileDescription Common Dialogs DLL
+  FileVersion 4.00
+  InternalName comdlg32
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename comdlg32.dll
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00
+clock.exe     
+  CompanyName Microsoft Corporation
+  FileDescription Clock Applet
+  FileVersion 4.00
+  InternalName clock
+  LegalCopyright Copyright (C) Microsoft Corp. 1981-1996
+  OriginalFilename CLOCK.EXE
+  ProductName Microsoft(R) Windows NT(TM) Operating System
+  ProductVersion 4.00

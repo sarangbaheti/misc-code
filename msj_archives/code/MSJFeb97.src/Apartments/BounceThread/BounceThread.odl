@@ -1,0 +1,66 @@
+// BounceThread.odl : type library source for OLE Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (BounceThread.tlb) that will become a resource in
+// BounceThread.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(7255DC20-51D2-11D0-908D-00608C86B89C), version(1.0),
+  helpstring("BounceThread OLE Control module"), control ]
+library BOUNCETHREADLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CBounceThreadCtrl
+
+	[ uuid(7255DC21-51D2-11D0-908D-00608C86B89C),
+	  helpstring("Dispatch interface for BounceThread Control"), hidden ]
+	dispinterface _DBounceThread
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CBounceThreadCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CBounceThreadCtrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CBounceThreadCtrl
+
+	[ uuid(7255DC22-51D2-11D0-908D-00608C86B89C),
+	  helpstring("Event interface for BounceThread Control") ]
+	dispinterface _DBounceThreadEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CBounceThreadCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CBounceThreadCtrl
+
+	[ uuid(7255DC23-51D2-11D0-908D-00608C86B89C),
+	  helpstring("BounceThread Control"), control ]
+	coclass BounceThread
+	{
+		[default] dispinterface _DBounceThread;
+		[default, source] dispinterface _DBounceThreadEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

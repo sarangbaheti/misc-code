@@ -1,0 +1,50 @@
+<html>
+<OBJECT ID="MyMenuControl1" WIDTH=21 HEIGHT=15
+ CLASSID="CLSID:84788585-3593-11D0-8F4A-10005A74E96B"
+ CODEBASE="VBMENU.OCX">
+</OBJECT>
+Choose Your Web Site
+<OBJECT ID="MyMenuControl2" WIDTH=22 HEIGHT=15
+ CLASSID="CLSID:84788585-3593-11D0-8F4A-10005A74E96B"
+ CODEBASE="VBMENU.OCX">
+</OBJECT>
+Choose Your Color
+<SCRIPT LANGUAGE="VBScript">
+<!--
+
+MyMenuControl1.MenuItem(1) = "www.microsoft.com"
+MyMenuControl1.MenuItem(2) = "www.netscape.com"
+MyMenuControl1.MenuItem(3) = "www.ibm.com"
+
+MyMenuControl2.MenuItem(1) = "Red"
+MyMenuControl2.MenuItem(2) = "Green"
+MyMenuControl2.MenuItem(3) = "Blue"
+MyMenuControl2.MenuItem(4) = "Grey"
+
+Sub MyMenuControl1_Click(ItemNumber)
+Select Case ItemNumber
+	Case 1
+		top.location="http://www.microsoft.com"
+	Case 2
+		top.location="http://www.netscape.com"
+	Case 3
+		top.location="http://www.ibm.com"
+End Select
+End Sub
+
+Sub MyMenuControl2_Click(ItemNumber)
+Select Case ItemNumber
+	Case 1
+		window.document.bgColor="Red"
+	Case 2
+		window.document.bgColor="Green"
+	Case 3
+		window.document.bgColor="Blue"
+	Case 4
+		window.document.bgColor="#C0C0C0"
+End Select
+End Sub
+
+-->
+</SCRIPT>
+</html>

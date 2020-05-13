@@ -1,0 +1,12 @@
+TARGETNAME=SIMPLE
+TARGETTYPE=DRIVER
+TARGETPATH=$(BASEDIR)\LIB
+INCLUDES=$(BASEDIR)\INC
+C_DEFINES=-DDRIVER -FR
+SOURCES= \
+	DriverEntry.cpp \
+	PlugPlay.cpp \
+	Control.cpp	\
+	Power.cpp \
+	ReadWrite.cpp
+NTTARGETFILES=STUFF simple.bsc

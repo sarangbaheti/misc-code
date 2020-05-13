@@ -1,0 +1,130 @@
+// ThreadDB.odl : type library source for OLE Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (ThreadDB.tlb) that will become a resource in
+// ThreadDB.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(7BF3C960-21D6-11D0-A77F-000000000000), version(1.0),
+  helpstring("ThreadDB OLE Control module"), control ]
+library THREADDBLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CThreadDBCtrl
+
+	[ uuid(7BF3C961-21D6-11D0-A77F-000000000000),
+	  helpstring("Dispatch interface for ThreadDB Control"), hidden ]
+	dispinterface _DThreadDB
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CThreadDBCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CThreadDBCtrl)
+			[id(1)] boolean StartSearch(long SocialSecurityNumber);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CThreadDBCtrl
+
+	[ uuid(7BF3C962-21D6-11D0-A77F-000000000000),
+	  helpstring("Event interface for ThreadDB Control") ]
+	dispinterface _DThreadDBEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CThreadDBCtrl)
+			[id(1)] void SearchFinished(IDispatch* ClientObj);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CThreadDBCtrl
+
+	[ uuid(7BF3C963-21D6-11D0-A77F-000000000000),
+	  helpstring("ThreadDB Control"), control ]
+	coclass ThreadDB
+	{
+		[default] dispinterface _DThreadDB;
+		[default, source] dispinterface _DThreadDBEvents;
+	};
+
+
+
+	//  Primary dispatch interface for CClient
+	
+	[ uuid(7BF3C968-21D6-11D0-A77F-000000000000) ]
+	dispinterface IClient
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CClient)
+			[id(1)] BSTR LastName;
+			[id(2)] BSTR FirstName;
+			[id(3)] long SocialSecurityNumber;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CClient)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CClient
+
+	[ uuid(7BF3C969-21D6-11D0-A77F-000000000000) ]
+	coclass CLIENT
+	{
+		[default] dispinterface IClient;
+	};
+
+
+	//  Primary dispatch interface for CCustomer
+	
+	[ uuid(940B07D1-3664-11D0-9077-00608C86B89C) ]
+	dispinterface ICustomer
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCustomer)
+			[id(1)] BSTR LastName;
+			[id(2)] BSTR FirstName;
+			[id(3)] long SocialSecurityNumber;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCustomer)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CCustomer
+
+	[ uuid(940B07D2-3664-11D0-9077-00608C86B89C) ]
+	coclass CUSTOMER
+	{
+		[default] dispinterface ICustomer;
+	};
+
+	//{{AFX_APPEND_ODL}}
+};

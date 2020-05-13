@@ -1,0 +1,507 @@
+[COMPILER]
+
+INCLUDEDIRS=%(INCLUDE)
+COMPILE=concur|capture,nmake %n.obj
+MAKE=concur|capture,nmake
+DEBUG=,msdev [exename-here]
+USER1=concur|capture,nmake /A
+USER2=,msdev
+
+
+[FILES]
+D:\msj\litctl.cpp
+D:\msj\litctl.def
+D:\msj\litctl.h
+D:\msj\litctl.odl
+D:\msj\litctl.rc
+[STATE]
+SCREEN: 1024 768 -30 -5 723 780 -1 -1 M 0 0 0 50
+CWD: d:\msncontent\CoreUI&Tools\COREUI
+BUFFER: BN="D:\msj\guids.h"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.374 CL=1 LE=0 CX=0 CY=6 WI=4 BI=4 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\litctl.h"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.2475 CL=1 LE=0 CX=0 CY=63 WI=4 BI=5 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\msncontent\CoreUI&Tools\COREUI\MSNGATE\msngate.cpp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=1 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.13895 CL=2 LE=0 CX=1 CY=69 WI=4 BI=6 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\litctl.odl"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.820 CL=1 LE=0 CX=0 CY=30 WI=4 BI=8 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\litctl.def"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=Fundamental	HM=0
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=4 BI=9 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\msncontent\CoreUI&Tools\parikr\ratoc\ratoc.h"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=1 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.507 CL=1 LE=0 CX=0 CY=21 WI=4 BI=10 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\msncontent\CoreUI&Tools\COREUI\MSNGATE\msngate.h"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=1 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.2145 CL=1 LE=0 CX=0 CY=9 WI=4 BI=11 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\msncontent\CoreUI&Tools\COREUI\ctr.cpp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=1 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.46308 CL=20 LE=0 CX=19 CY=36 WI=4 BI=7 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\litctl.cpp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.21079 CL=1 LE=0 CX=0 CY=69 WI=4 BI=12 HT=0 HN=0 HF=0 HC=4
+WINDOW: 655 0 625 908 -1 -1 N  WF=0 WT=3 "OEM Fixed Font,10,0"
+BUFFER: BN="d:\msncontent\CoreUI&Tools\COREUI\ctr.cpp"
+VIEW: LN=.46308 CL=20 LE=0 CX=20 CY=36 WI=5 BI=7 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 655 908 -1 -1 M  WF=0 WT=3 "OEM Fixed Font,10,0"
+BUFFER: BN="D:\msj\litctl.cpp"
+VIEW: LN=.21079 CL=1 LE=0 CX=1 CY=52 WI=6 BI=12 HT=0 HN=0 HF=0 HC=4
+CLIPBOARDS: 439 15 15 438
+:CHAR 1 *
+3df08d70
+:CHAR 1 *
+c5d4bc10-4728-11d0-817c-00aa00bf9457
+:CHAR 1 *
+c5d4bc10
+:CHAR 4 *
+    STDMETHOD(get_AnswerToTheUniverse(PLONG plAnswer);
+    STDMETHOD(put_AnswerToTheUniverse(LONG lAnswer);
+    STDMETHOD(IEToolBar(VARIANT_BOOL fToolBar);
+
+:CHAR 30 *
+int StringFromGuidA(REFIID, LPSTR);
+BOOL RegisterUnknownObject(LPCSTR pszObjectName, REFCLSID riidObject);
+BOOL DeleteKeyAndSubKeys(HKEY hkIn, LPSTR pszSubKey);
+BOOL
+UnregisterAutomationObject(
+        LPCSTR   pszLibName,
+        LPCSTR   pszObjectName,
+        long     lVersion,
+        REFCLSID riidObject);
+
+BOOL UnregisterUnknownObject(REFCLSID riidObject);
+BOOL
+RegisterControlObject(
+        LPCSTR   pszLibName,
+        LPCSTR   pszObjectName,
+        long     lVersion,
+        REFCLSID riidLibrary,
+        REFCLSID riidObject,
+        DWORD    dwMiscStatus,
+        WORD     wToolboxBitmapId);
+
+BOOL RegisterAutomationObject(
+        LPCSTR   pszLibName,
+        LPCSTR   pszObjectName,
+        long     lVersion,
+        REFCLSID riidLibrary,
+        REFCLSID riidObject);
+
+
+
+:CHAR 12 *
+//
+// handy error macros, randing from cleaning up, to returning to clearing
+// rich error information as well.
+//
+#define RETURN_ON_FAILURE(hr) if (FAILED(hr)) return hr
+#define RETURN_ON_NULLALLOC(ptr) if (!(ptr)) return E_OUTOFMEMORY
+#define CLEANUP_ON_FAILURE(hr) if (FAILED(hr)) goto CleanUp
+#define CLEARERRORINFORET(hr) { SetErrorInfo(0, NULL); return hr; }
+#define CLEARERRORINFORET_ON_FAILURE(hr) if (FAILED(hr)) { SetErrorInfo(0, NULL); return hr; }
+
+#define CLEANUP_ON_ERROR(l)    if (l != ERROR_SUCCESS) goto CleanUp
+
+:CHAR 4 *
+    HRESULT _GetDISPID(LPDISPATCH pDisp, UINT uIDName, DISPID * pDispID);
+    HRESULT _GetDispProperty(LPDISPATCH pDisp, UINT uIDName, LPDISPATCH * ppDisp);
+    HRESULT _GetProperty(LPDISPATCH pDisp, UINT uIDName, VARTYPE vt, LPVARIANT pVar);
+
+:CHAR 32 *
+//+---------------------------------------------------------------------------
+//
+//  Member:     CMSNGate::_GetDispProperty
+//
+//  Synopsis:   helper wrapper for _GetProperty() for returning
+//              LPDISPATCH - values properties.
+//
+//  Effects:    on success, *ppDisp points to an implementation of
+//              IDispatch that must be Release()ed when done.
+//
+//  Arguments:  [uIDName] -- stringtable ID for name of property
+//              [ppDisp]  -- LPDISPATCH returned on success.
+//
+//  Requires:   uIDName must point to a valid stringtable entry that
+//              is the exact string value for the desired property
+//              for *this* version of IE.  Note that these properties
+//              get localized with the version of IE, so these strings
+//              *must* be correctly localized.
+//
+//  Returns:    HRESULT - on failure, ppDisp is 0
+//
+//----------------------------------------------------------------------------
+HRESULT
+CMSNGate::_GetDispProperty(LPDISPATCH pDisp, UINT uIDName, LPDISPATCH * ppDisp)
+{
+    HRESULT  hr;
+    VARIANT var;
+
+    _ASSERTE(pDisp);
+    _ASSERTE(ppDisp);  // precondition
+
+ 
+:CHAR 169 *
+//+---------------------------------------------------------------------------
+//
+//  Member:     CMSNGate::_GetProperty
+//
+//  Synopsis:   Generalized property retrieval routine, takes the
+//              stringtable ID of the name of the property, the type
+//              of the property, and a variant, and returns the
+//              property value in the variant.
+//
+//  Effects:    Some property types allocate memory.  VariantClear()
+//              should be used on the pVar returned (or, a more specific
+//              deallocation method if desired).
+//
+//  Arguments:  [uIDName] -- stringtable ID of property
+//              [vt]      -- type of property
+//              [pVar]    -- variant with property returned in it.
+//
+//  Returns:    HRESULT
+//
+//  Requires:   uIDName must point to a valid stringtable entry that
+//              is the exact string value for the desired property
+//              for *this* version of IE.  Note that these properties
+//              get localized with the version of IE, so these strings
+//              *must* be correctly localized.
+//
+//----------------------------------------------------------------------------
+HRESULT
+CMSNGate::_GetProperty(LPDISPATCH pDisp, UINT uIDName, VARTYPE vt, LPVARIANT pVar)
+{
+    DISPID     id;
+    EXCEPINFO  excep;
+    HRESULT    hr;
+    UINT       uArgErr;
+    DISPPARAMS dispparams = {0,0,0,0};
+
+    _ASSERTE(pDisp);
+
+    // Map the property name to a dispid.
+    hr = _GetDISPID(pDisp, uIDName, &id);
+    if (hr)
+        return hr;
+
+    // setup the variant for the property to be returned in it.
+    ::VariantInit(pVar);
+    V_VT(pVar) = vt;
+
+    // get the property.
+    return pDisp->Invoke(
+                    id,
+                    IID_NULL,
+                    LOCALE_SYSTEM_DEFAULT,
+                    DISPATCH_PROPERTYGET,
+                    &dispparams,
+                    pVar,
+                    &excep,
+                    &uArgErr);
+}
+
+//+---------------------------------------------------------------------------
+//
+//  Member:     CMSNGate::_GetDispProperty
+//
+//  Synopsis:   helper wrapper for _GetProperty() for returning
+//              LPDISPATCH - values properties.
+//
+//  Effects:    on success, *ppDisp points to an implementation of
+//              IDispatch that must be Release()ed when done.
+//
+//  Arguments:  [uIDName] -- stringtable ID for name of property
+//              [ppDisp]  -- LPDISPATCH returned on success.
+//
+//  Requires:   uIDName must point to a valid stringtable entry that
+//              is the exact string value for the desired property
+//              for *this* version of IE.  Note that these properties
+//              get localized with the version of IE, so these strings
+//              *must* be correctly localized.
+//
+//  Returns:    HRESULT - on failure, ppDisp is 0
+//
+//----------------------------------------------------------------------------
+HRESULT
+CMSNGate::_GetDispProperty(LPDISPATCH pDisp, UINT uIDName, LPDISPATCH * ppDisp)
+{
+    HRESULT  hr;
+    VARIANT var;
+
+    _ASSERTE(pDisp);
+    _ASSERTE(ppDisp);  // precondition
+
+    *ppDisp = 0;
+
+    hr = _GetProperty(pDisp, uIDName, VT_DISPATCH, &var);
+    if (hr)
+        return hr;
+
+    // if not VT_DISPATCH returned, then bail out.  Don't permit this.
+    if (VT_DISPATCH != V_VT(&var))
+    {
+        ::VariantClear(&var);
+        return E_FAIL;
+    }
+
+    // make sure it's a nonzero pointer.
+    *ppDisp = V_DISPATCH(&var);
+    if (!*ppDisp)
+        return E_FAIL;
+
+    return S_OK;
+}
+
+
+//+---------------------------------------------------------------------------
+//
+//  Member:     CMSNOCCtr::_GetDISPID
+//
+//  Synopsis:   reduce verbosity of GetIDsOfNames - basically maps
+//              stringtable IDs of localized named of IE commands to
+//              the dispids.  Why don't we just use the dispids
+//              directly?  Because they haven't published in a header
+//              file we can trust - so we get these dynamically, at
+//              runtime (late-bound).
+//
+//  Arguments:  [uIDName] -- stringtable ID for localized name of
+//                           property or method.
+//              [pDispId] -- dispid returned
+//
+//  Returns:    HRESULT
+//
+//----------------------------------------------------------------------------
+HRESULT
+CMSNGate::_GetDISPID(LPDISPATCH pDisp, UINT uIDName, DISPID * pDispId)
+{
+    OLECHAR aOleCh[MAX_OLECMD_BUFFER_SIZE];
+    OLECHAR * pOleCh = aOleCh;  // because GetIDsOfNames needs this.
+    CHAR    ach[MAX_OLECMD_BUFFER_SIZE];
+    INT     cch;
+
+    _ASSERTE(pDisp);
+    // explicitly ask for LoadStringA - because this is all that exists
+    // on W95.  Get the localized string name of the OLE Automation
+    // member from the stringtable.
+    cch = ::LoadStringA(g_hInst, uIDName, ach, NElems(ach));
+    if (!cch)
+        return HRESULT_FROM_WIN32(::GetLastError());
+
+    // convert the ANSI string to wide
+    cch = ::MultiByteToWideChar(
+                CP_ACP,
+                0,
+                ach,
+                -1,
+                aOleCh,
+                NElems(aOleCh));
+
+    if (!cch)
+        return E_FAIL;
+
+    _ASSERTE(cch > 0);
+    _ASSERTE(cch <= MAX_OLECMD_BUFFER_SIZE);
+
+    // map the string name to a dispid
+    return pDisp->GetIDsOfNames(
+                    IID_NULL,
+                    &pOleCh,
+                    1,
+                    LOCALE_SYSTEM_DEFAULT,
+                    pDispId);
+}
+
+:CHAR 155 *
+//+---------------------------------------------------------------------------
+//
+//  Member:     CLiteCtl::_GetProperty
+//
+//  Synopsis:   Generalized property retrieval routine, takes the
+//              stringtable ID of the name of the property, the type
+//              of the property, and a variant, and returns the
+//              property value in the variant.
+//
+//  Effects:    Some property types allocate memory.  VariantClear()
+//              should be used on the pVar returned (or, a more specific
+//              deallocation method if desired).
+//
+//  Arguments:  [uIDName] -- stringtable ID of property
+//              [vt]      -- type of property
+//              [pVar]    -- variant with property returned in it.
+//
+//  Returns:    HRESULT
+//
+//----------------------------------------------------------------------------
+HRESULT
+CLiteCtl::_GetProperty(LPDISPATCH pDisp, UINT uIDName, VARTYPE vt, LPVARIANT pVar)
+{
+    DISPID     id;
+    EXCEPINFO  excep;
+    HRESULT    hr;
+    UINT       uArgErr;
+    DISPPARAMS dispparams = {0,0,0,0};
+
+    _ASSERTE(pDisp);
+
+    // Map the property name to a dispid.
+    hr = _GetDISPID(pDisp, uIDName, &id);
+    if (hr)
+        return hr;
+
+    // setup the variant for the property to be returned in it.
+    ::VariantInit(pVar);
+    V_VT(pVar) = vt;
+
+    // get the property.
+    return pDisp->Invoke(
+                    id,
+                    IID_NULL,
+                    LOCALE_SYSTEM_DEFAULT,
+                    DISPATCH_PROPERTYGET,
+                    &dispparams,
+                    pVar,
+                    &excep,
+                    &uArgErr);
+}
+
+//+---------------------------------------------------------------------------
+//
+//  Member:     CLiteCtl::_GetDispProperty
+//
+//  Synopsis:   helper wrapper for _GetProperty() for returning
+//              LPDISPATCH - values properties.
+//
+//  Effects:    on success, *ppDisp points to an implementation of
+//              IDispatch that must be Release()ed when done.
+//
+//  Arguments:  [uIDName] -- stringtable ID for name of property
+//              [ppDisp]  -- LPDISPATCH returned on success.
+//
+//  Requires:   uIDName must point to a valid stringtable entry that
+//              is the exact string value for the desired property
+//              for IE.
+//
+//  Returns:    HRESULT - on failure, ppDisp is 0
+//
+//----------------------------------------------------------------------------
+HRESULT
+CLiteCtl::_GetDispProperty(LPDISPATCH pDisp, UINT uIDName, LPDISPATCH * ppDisp)
+{
+    HRESULT  hr;
+    VARIANT var;
+
+    _ASSERTE(pDisp);
+    _ASSERTE(ppDisp);  // precondition
+
+    *ppDisp = 0;
+
+    hr = _GetProperty(pDisp, uIDName, VT_DISPATCH, &var);
+    if (hr)
+        return hr;
+
+    // if not VT_DISPATCH returned, then bail out.  Don't permit this.
+    if (VT_DISPATCH != V_VT(&var))
+    {
+        ::VariantClear(&var);
+        return E_FAIL;
+    }
+
+    // make sure it's a nonzero pointer.
+    *ppDisp = V_DISPATCH(&var);
+    if (!*ppDisp)
+        return E_FAIL;
+
+    return S_OK;
+}
+
+
+//+---------------------------------------------------------------------------
+//
+//  Member:     CLiteCtl::_GetDISPID
+//
+//  Synopsis:   reduce verbosity of GetIDsOfNames
+//
+//  Arguments:  [uIDName] -- stringtable ID for localized name of
+//                           property or method.
+//              [pDispId] -- dispid returned
+//
+//  Returns:    HRESULT
+//
+//----------------------------------------------------------------------------
+HRESULT
+CLiteCtl::_GetDISPID(LPDISPATCH pDisp, UINT uIDName, DISPID * pDispId)
+{
+    OLECHAR aOleCh[MAX_OLECMD_BUFFER_SIZE];
+    OLECHAR * pOleCh = aOleCh;  // because GetIDsOfNames needs this.
+    CHAR    ach[MAX_OLECMD_BUFFER_SIZE];
+    INT     cch;
+
+    _ASSERTE(pDisp);
+    // explicitly ask for LoadStringA - because this is all that exists
+    // on W95.  Get the localized string name of the OLE Automation
+    // member from the stringtable.
+    cch = ::LoadStringA(g_hInst, uIDName, ach, NElems(ach));
+    if (!cch)
+        return HRESULT_FROM_WIN32(::GetLastError());
+
+    // convert the ANSI string to wide
+    cch = ::MultiByteToWideChar(
+                CP_ACP,
+                0,
+                ach,
+                -1,
+                aOleCh,
+                NElems(aOleCh));
+
+    if (!cch)
+        return E_FAIL;
+
+    _ASSERTE(cch > 0);
+    _ASSERTE(cch <= MAX_OLECMD_BUFFER_SIZE);
+
+    // map the string name to a dispid
+    return pDisp->GetIDsOfNames(
+                    IID_NULL,
+                    &pOleCh,
+                    1,
+                    LOCALE_SYSTEM_DEFAULT,
+                    pDispId);
+}
+:CHAR 5 *
+    // helper routines for doing late bound property gets
+    HRESULT _GetDISPID(LPDISPATCH pDisp, UINT uIDName, DISPID * pDispID);
+    HRESULT _GetDispProperty(LPDISPATCH pDisp, UINT uIDName, LPDISPATCH * ppDisp);
+    HRESULT _GetProperty(LPDISPATCH pDisp, UINT uIDName, VARTYPE vt, LPVARIANT pVar);
+
+:CHAR 5 *
+    // helper routines for doing late bound property gets
+    HRESULT _GetDISPID(LPDISPATCH pDisp, UINT uIDName, DISPID * pDispID);
+    HRESULT _GetDispProperty(LPDISPATCH pDisp, UINT uIDName, LPDISPATCH * ppDisp);
+    HRESULT _GetProperty(LPDISPATCH pDisp, UINT uIDName, VARTYPE vt, LPVARIANT pVar);
+
+:LINE 1 *
+HRESULT _GetDISPID(LPDISPATCH pDisp, UINT uIDName, DISPID * pDispID);
+:LINE 3 *
+        LPDISPATCH pDisp, 
+        UINT uIDName, 
+        DISPID * pDispId)
+:LINE 1 *
+        LPDISPATCH pDisp, UINT uIDName, VARTYPE vt, LPVARIANT pVar)
+FILEHIST: 9
+D:\msj\litctl.odl
+D:\msj\litctl.h
+D:\msj\litctl.cpp
+D:\msj\guids.h
+D:\msj\litctl.def
+d:\msncontent\CoreUI&Tools\parikr\ratoc\ratoc.h
+d:\msncontent\CoreUI&Tools\COREUI\MSNGATE\msngate.cpp
+d:\msncontent\CoreUI&Tools\COREUI\MSNGATE\msngate.h
+d:\msncontent\CoreUI&Tools\COREUI\ctr.cpp
+BOOKMARK: 0
+PUSHTAG: 0 1
+PRINTER: 2
+
+

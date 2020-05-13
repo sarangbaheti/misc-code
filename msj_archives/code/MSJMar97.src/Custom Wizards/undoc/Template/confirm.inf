@@ -1,0 +1,42 @@
+Characteristics of $$root$$ application:
+
+$$IF(multipane)
+Splitter window with:
+$$IF(treepane)
+    .Pane with tree control
+$$ENDIF
+$$IF(datapane)
+    .Pane with list control
+$$ENDIF
+$$IF(stdpane)
+    .Pane with standard window
+$$ENDIF
+$$ELSE // not multipane
+$$IF(treepane)
+Frame window with imbedded tree control
+$$ELIF(datapane)
+Frame window with imbedded list control
+$$ELSE
+Frame window with imbedded window
+$$ENDIF
+$$ENDIF // not multipane
+$$///////////////////////////////////////////////////////
+$$IF(toolbar)
+
+Standard tool bar control
+$$IF(dockable)
+    .Tool bar can be docked to any edge of window
+$$ENDIF
+$$IF(tooltips)
+    .Tool tips will float above buttons
+$$ENDIF
+$$ENDIF // toolbar
+$$///////////////////////////////////////////////////////
+$$IF(statusbar)
+
+Standard status bar control
+    .Standard message pane
+$$IF(indicators)
+    .Standard shift-key indicator panes
+$$ENDIF
+$$ENDIF // statusbar

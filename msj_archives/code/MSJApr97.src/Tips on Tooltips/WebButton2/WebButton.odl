@@ -1,0 +1,67 @@
+// WebButton.odl : type library source for OLE Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (WebButton.tlb) that will become a resource in
+// WebButton.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(381C5020-2FDA-11D0-8BC1-444553540000), version(1.0),
+  helpstring("WebButton OLE Control module"), control ]
+library WEBBUTTONLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CWebButtonCtrl
+
+	[ uuid(381C5021-2FDA-11D0-8BC1-444553540000),
+	  helpstring("Dispatch interface for WebButton Control"), hidden ]
+	dispinterface _DWebButton
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CWebButtonCtrl)
+			[id(1)] boolean ToolTipEnabled;
+			[id(2)] BSTR ToolTipText;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CWebButtonCtrl)
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CWebButtonCtrl
+
+	[ uuid(381C5022-2FDA-11D0-8BC1-444553540000),
+	  helpstring("Event interface for WebButton Control") ]
+	dispinterface _DWebButtonEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CWebButtonCtrl)
+			[id(DISPID_CLICK)] void Click();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CWebButtonCtrl
+
+	[ uuid(381C5023-2FDA-11D0-8BC1-444553540000),
+	  helpstring("WebButton Control"), control ]
+	coclass WebButton
+	{
+		[default] dispinterface _DWebButton;
+		[default, source] dispinterface _DWebButtonEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

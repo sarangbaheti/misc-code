@@ -1,0 +1,39 @@
+[
+    uuid(25b30900-4728-11d0-817c-00aa00bf9457),
+    helpstring("MSJ LiteCtl dispatch library"),
+    lcid(0x0000),
+    version(1.0)
+]
+library ratoc
+{
+    importlib("stdole32.tlb");
+
+
+    [
+        uuid(3df08d70-4728-11d0-817c-00aa00bf9457),
+        helpstring("MSJ LiteCtl dispatch interface"),
+        odl,
+        dual
+    ]
+    interface ILiteCtl : IDispatch
+    {
+        [id(0), propget, helpstring("Returns or sets the Answer to the Universe.")]
+        HRESULT AnswerToTheUniverse([out, retval] long * plAnswer);
+
+        [id(0), propput, helpstring("Returns or sets the Answer to the Universe.")]
+        HRESULT AnswerToTheUniverse([in] long lAnswer);
+
+        [propput, helpstring("Turns the IE Toolbar on or off")]
+        HRESULT IEToolBar([in] boolean bToolbar);
+    }
+
+    [
+        uuid(c5d4bc10-4728-11d0-817c-00aa00bf9457),
+        helpstring("MSJ Lite Control")
+    ]
+    coclass LiteCtl
+    {
+        [default] interface ILiteCtl;
+    }
+}
+

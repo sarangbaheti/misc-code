@@ -1,0 +1,348 @@
+eTab growSize 4
+{ 4
+	"Version" eTab growSize 4
+	{ 2
+		"Major" s 2
+		"Minor" s 1
+	}
+	"Project" eTab growSize 4
+	{ 12
+		"Name" ea "chat"
+		"Project Type" i 0
+		"EosFramework" ea "ChatApp"
+		"Environment" i 1
+		"Company Name" eStr null
+		"Product Name" eStr null
+		"Product Version" eStr 3 "0.0"
+		"Copyright Message" eStr null
+		"Default Dialog Type" eNum ( "Default Dialog Type" 1 )
+		"App Type" i 3
+		"Default Deployment" eNum ( "EosProjectGalleryType" 1 )
+		"Default Layout" eNum ( "Default Layout" 0 )
+	}
+	"Types List" eTab growSize 4
+	{ 2
+		"ChatApp" eTab growSize 4
+		{ 12
+			"Name" ea "ChatApp"
+			"Super Class" ea "EosFramework"
+			"EosStructType" eNum ( "EosStructType" 1 )
+			"Header File" eStr 7 "ChatApp"
+			"Implementation File" eStr 7 "ChatApp"
+			"Last HPP Generated" eStr 7 "ChatApp"
+			"Last CPP Generated" eStr 7 "ChatApp"
+			"Last Class Generated" eStr 7 "ChatApp"
+			"Property List" eTab growSize 4
+			{ 0
+			}
+			"Fields" eTab growSize 4
+			{ 1
+				"fChatList" eTab growSize 4
+				{ 5
+					"Name" ea "fChatList"
+					"Property List" eTab growSize 4
+					{ 0
+					}
+					"class" ea "ChatApp"
+					"eos_type" ea "EosString"
+					"Is Array" eb T
+				}
+			}
+			"Functions" eTab growSize 4
+			{ 0
+			}
+			"Views" eTab growSize 4
+			{ 0
+			}
+		}
+		"ChatPerson" eTab growSize 4
+		{ 12
+			"Name" ea "ChatPerson"
+			"Super Class" ea "EosObject"
+			"EosStructType" eNum ( "EosStructType" 1 )
+			"Header File" eStr 10 "ChatPerson"
+			"Implementation File" eStr 10 "ChatPerson"
+			"Last HPP Generated" eStr 10 "ChatPerson"
+			"Last CPP Generated" eStr 10 "ChatPerson"
+			"Last Class Generated" eStr 10 "ChatPerson"
+			"Property List" eTab growSize 4
+			{ 0
+			}
+			"Fields" eTab growSize 4
+			{ 3
+				"fChatList" eTab growSize 4
+				{ 6
+					"Name" ea "fChatList"
+					"Property List" eTab growSize 4
+					{ 0
+					}
+					"class" ea "ChatPerson"
+					"eos_type" ea "EosString"
+					"Is Array" eb T
+					"pointer" eb T
+				}
+				"fName" eTab growSize 4
+				{ 4
+					"Name" ea "fName"
+					"Property List" eTab growSize 4
+					{ 0
+					}
+					"class" ea "ChatPerson"
+					"eos_type" ea "EosString"
+				}
+				"fSendString" eTab growSize 4
+				{ 4
+					"Name" ea "fSendString"
+					"Property List" eTab growSize 4
+					{ 0
+					}
+					"class" ea "ChatPerson"
+					"eos_type" ea "EosString"
+				}
+			}
+			"Functions" eTab growSize 4
+			{ 1
+				"send" eTab growSize 4
+				{ 4
+					"Name" ea "send"
+					"class" ea "ChatPerson"
+					"signature" ea "NVNV"
+					"Property List" eTab growSize 4
+					{ 0
+					}
+				}
+			}
+			"Views" eTab growSize 4
+			{ 1
+				"Chat" eTab growSize 4
+				{ 7
+					"Interactor Name" ea "Chat"
+					"Constructor" ea "EosJavaEmbeddedView"
+					"Local Descriptor" eTab growSize 20
+					{ 1
+						"View Children" eSeq growSize 3 [ 3 eTab growSize 10
+							{ 13
+								"EosViewType" eNum ( "EosViewType" 1 )
+								"Interactor Name" ea "Java Text"
+								"Environment Index" l -1
+								"Caption" eStr 4 "Chat"
+								"EosInteractorType" eNum ( "EosInteractorType" 0 )
+								"View Style" eTab growSize 4
+								{ 2
+									"Parent" ea "System"
+									"Font" eFon "F Times New Roman 2 -27 F F"
+								}
+								"Min Lines" l 1
+								"Max Lines" l 100
+								"Min Chars" l 15
+								"Desired Chars" l 15
+								"Max Chars" l 300
+								"Size to Text" eb T
+								"Java Class Name" ea "EosLabel"
+							} growSize 10
+							{ 17
+								"EosViewType" eNum ( "EosViewType" 2 )
+								"Interactor Name" ea "Java List Box"
+								"Environment Index" l -1
+								"EosInteractorType" eNum ( "EosInteractorType" 0 )
+								"EosStructType" eNum ( "EosStructType" 0 )
+								"Data Type" ea "EosBaseArray"
+								"Field Name" ea "fChatList"
+								"Editor Name" ea "EosOVMapEditor"
+								"Environment Object Id" l -1
+								"Tab Order" s -1
+								"Min Lines" l 10
+								"Desired Lines" l 10
+								"Max Lines" l 100
+								"Min Chars" l 20
+								"Desired Chars" l 20
+								"Max Chars" l 300
+								"Java Class Name" ea "EosListBox"
+							} growSize 10
+							{ 6
+								"EosViewType" eNum ( "EosViewType" 0 )
+								"Interactor Name" ea "Java Grid"
+								"Environment Index" l -1
+								"EosInteractorType" eNum ( "EosInteractorType" 0 )
+								"View Children" eSeq growSize 4 [ 4 eTab growSize 10
+									{ 12
+										"EosViewType" eNum ( "EosViewType" 1 )
+										"Interactor Name" ea "Java Text"
+										"Environment Index" l -1
+										"Caption" eStr 8 "My Name:"
+										"EosInteractorType" eNum ( "EosInteractorType" 0 )
+										"Min Lines" l 1
+										"Max Lines" l 100
+										"Min Chars" l 15
+										"Desired Chars" l 15
+										"Max Chars" l 300
+										"Size to Text" eb T
+										"Java Class Name" ea "EosLabel"
+									} growSize 10
+									{ 9
+										"EosViewType" eNum ( "EosViewType" 0 )
+										"Interactor Name" ea "Java Box"
+										"Environment Index" l -1
+										"Caption" eStr 8 "Untitled"
+										"EosInteractorType" eNum ( "EosInteractorType" 0 )
+										"Margin (Internal)" eb T
+										"View Children" eSeq growSize 2 [ 2 eTab growSize 10
+											{ 15
+												"EosViewType" eNum ( "EosViewType" 2 )
+												"Interactor Name" ea "Java Type In"
+												"Environment Index" l -1
+												"EosInteractorType" eNum ( "EosInteractorType" 0 )
+												"EosStructType" eNum ( "EosStructType" 0 )
+												"Data Type" ea "EosString"
+												"Field Name" ea "fName"
+												"Editor Name" ea "EosOVMapEditor"
+												"Environment Object Id" l -1
+												"Tab Order" s 0
+												"Desired Lines" l 1
+												"Min Chars" l 15
+												"Desired Chars" l 15
+												"Max Chars" l 300
+												"Java Class Name" ea "EosTextField"
+											} growSize 10
+											{ 19
+												"EosViewType" eNum ( "EosViewType" 2 )
+												"Interactor Name" ea "Java Button"
+												"Environment Index" l -1
+												"Caption" eStr 4 "Send"
+												"EosInteractorType" eNum ( "EosInteractorType" 0 )
+												"Data Type" ea "EosFunction"
+												"Min Chars" l 15
+												"Desired Chars" l 15
+												"Max Chars" l 15
+												"Min Lines" l 1
+												"Desired Lines" l 1
+												"Max Lines" l 1
+												"EosStructType" eNum ( "EosStructType" 0 )
+												"Field Name" ea "send"
+												"Editor Name" ea "EosOVMapEditor"
+												"Environment Object Id" l -1
+												"Tab Order" s 2
+												"Java Class Name" ea "EosButton"
+												"OK Cancel Neither" s -1
+											} ]
+										"Layout Style" eNum ( "EosOrientation" 0 )
+										"Java Class Name" ea "EosBoxContainer"
+									} growSize 10
+									{ 12
+										"EosViewType" eNum ( "EosViewType" 1 )
+										"Interactor Name" ea "Java Text"
+										"Environment Index" l -1
+										"Caption" eStr 8 "Message:"
+										"EosInteractorType" eNum ( "EosInteractorType" 0 )
+										"Min Lines" l 1
+										"Max Lines" l 100
+										"Min Chars" l 15
+										"Desired Chars" l 15
+										"Max Chars" l 300
+										"Size to Text" eb T
+										"Java Class Name" ea "EosLabel"
+									} growSize 10
+									{ 15
+										"EosViewType" eNum ( "EosViewType" 2 )
+										"Interactor Name" ea "Java Type In"
+										"Environment Index" l -1
+										"EosInteractorType" eNum ( "EosInteractorType" 0 )
+										"EosStructType" eNum ( "EosStructType" 0 )
+										"Data Type" ea "EosString"
+										"Field Name" ea "fSendString"
+										"Editor Name" ea "EosOVMapEditor"
+										"Environment Object Id" l -1
+										"Tab Order" s 1
+										"Desired Lines" l 1
+										"Min Chars" l 15
+										"Desired Chars" l 15
+										"Max Chars" l 300
+										"Java Class Name" ea "EosTextField"
+									} ]
+								"Java Class Name" ea "EosGridContainer"
+							} ]
+					}
+					"Parent Descriptor" eTab growSize 10
+					{ 17
+						"EosViewType" eNum ( "EosViewType" 2 )
+						"Interactor Name" ea "Chat"
+						"Environment Index" l -1
+						"EosInteractorType" eNum ( "EosInteractorType" 0 )
+						"Margin" eb T
+						"Min Container Width" l 5
+						"Min Container Height" l 5
+						"Show Grid" eb F
+						"EosStructType" eNum ( "EosStructType" 1 )
+						"Data Type" ea "ChatPerson"
+						"Field Name" ea ""
+						"Editor Name" ea "EosContainerEditor"
+						"Environment Object Id" l -1
+						"Tab Order" s -1
+						"Accelerator" s 0
+						"eosEffectiveTypeName" ea ""
+						"Java Class Name" ea "EosEmbeddedView"
+					}
+					"Shell Descriptor" eTab growSize 10
+					{ 16
+						"EosViewType" eNum ( "EosViewType" 0 )
+						"Interactor Name" ea "Chat"
+						"Environment Index" l 0
+						"Caption" eStr 4 "Chat"
+						"EosInteractorType" eNum ( "EosInteractorType" 0 )
+						"View Style" ea "System"
+						"Background Height" eb T
+						"Min Container Width" l 5
+						"Min Container Height" l 5
+						"View Children" eSeq growSize 4 [ 0 eTab ]
+						"Minimized Icon" eIcn ""
+						"Modality State" eNum ( "EosModality" 2 )
+						"X" s 422
+						"Y" s 139
+						"Width" s 353
+						"Height" s 304
+					}
+					"Palette Bitmap" eBmp ""
+					"class" ea "ChatPerson"
+				}
+			}
+		}
+	}
+	"Resources List" eTab growSize 4
+	{ 8
+		"Icon List" eTab growSize 4
+		{ 0
+		}
+		"Bitmap List" eTab growSize 4
+		{ 0
+		}
+		"Cursor List" eTab growSize 4
+		{ 0
+		}
+		"Font List" eTab growSize 4
+		{ 1
+			"F Times New Roman 2 -27 F F" eTab growSize 4
+			{ 8
+				"Font Underline" eb F
+				"Font Strikeout" eb F
+				"Font Size" i -27
+				"Character Set" i 0
+				"Font Style" i 2
+				"Font Typename" eStr 15 "Times New Roman"
+				"Is TrueType" eb F
+				"Font Name" eStr 21 "Times New Roman 20Pt."
+			}
+		}
+		"ImageList List" eTab growSize 4
+		{ 0
+		}
+		"Sound List" eTab growSize 4
+		{ 0
+		}
+		"Video List" eTab growSize 4
+		{ 0
+		}
+		"Resource Seqs" eTab growSize 4
+		{ 0
+		}
+	}
+}

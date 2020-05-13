@@ -1,0 +1,21 @@
+QUESTION
+
+Received: from pc_von_mo by WS-SERVER.pipetronix.de (5.x/SMI-SVR4) id
+AA10667;
+          Mon, 13 Nov 1995 16:01:34 +0100
+Date: Mon, 13 Nov 1995 16:01:33 +0100
+Message-Id: <9511131501.AA10667@WS-SERVER.pipetronix.de>
+X-Sender: mo@193.141.60.18
+X-Mailer: Windows Eudora Version 1.4.4
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: 72400.2702@compuserve.com
+From: mo@WS-SERVER.pipetronix.de ()
+Subject: Center a FormView
+
+Paul,
+
+Q: How can I center a (new) FormView into my MainFrame?
+
+Marc Ochsenmeier
+

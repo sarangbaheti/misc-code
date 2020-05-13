@@ -1,0 +1,11 @@
+[OPTIONS]
+TITLE=UNDOC AppWizard Help
+COMPRESS=true
+WARNING=2
+
+[FILES]
+hlp\undoc.rtf
+
+[MAP]
+#include <D:\MSDEV\MFC\include\afxhelp.hm>
+#include <hlp\undoc.hm>

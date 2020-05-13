@@ -1,0 +1,36 @@
+#==================================================
+# TINYCRT - Matt Pietrek 1996
+# Microsoft Systems Journal, October 1996
+# FILE: TINYCRT.BOR - Makefile for Borland version
+#==================================================
+PROJ = CW32TINY
+
+OBJS =  CRT0TCON.OBJ CRT0TWIN.OBJ ARGCARGV.OBJ PRINTF.OBJ SPRINTF.OBJ PUTS.OBJ \
+        ALLOC.OBJ ALLOC2.OBJ ALLOCSUP.OBJ STRUPLWR.OBJ ATOL.OBJ \
+        STRICMP.OBJ NEWDEL.OBJ # C032CON.OBJ C032WIN.OBJ
+
+#If you need to build C032xxx.OBJ, remove the '#' from the above line
+
+CC = BCC32
+CC_OPTIONS = -c -W -DWIN32_LEAN_AND_MEAN
+
+!ifdef DEBUG
+CC_OPTIONS = $(CC_OPTIONS) -v
+!else
+CC_OPTIONS = $(CC_OPTIONS) /O1
+!endif
+
+$(PROJ).LIB: $(OBJS)
+    echo building libs
+
+.C.OBJ:
+    $(CC) $(CC_OPTIONS) $<
+    TLIB $(PROJ).LIB +- $&.OBJ
+
+.CPP.OBJ:
+    $(CC) $(CC_OPTIONS) $<
+    TLIB $(PROJ).LIB +- $&.OBJ
+
+.ASM.OBJ:
+    TASM32 /ml $<
+    

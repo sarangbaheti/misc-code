@@ -1,0 +1,49 @@
+//***********************************************************************
+//
+//  DVDemo.rc
+//
+//***********************************************************************
+
+#include <afxres.h>
+#include "Resource.h"
+
+IDR_DRIVEIMAGES BITMAP Drives.bmp
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&Options" {
+        MENUITEM "Refresh Drive &A:",   IDM_MENU_BASE
+        MENUITEM "Refresh Drive &B:",   IDM_MENU_BASE + 1
+        MENUITEM "Refresh Drive &C:",   IDM_MENU_BASE + 2
+        MENUITEM "Refresh Drive &D:",   IDM_MENU_BASE + 3
+        MENUITEM "Refresh Drive &E:",   IDM_MENU_BASE + 4
+        MENUITEM "Refresh Drive &F:",   IDM_MENU_BASE + 5
+        MENUITEM "Refresh Drive &G:",   IDM_MENU_BASE + 6
+        MENUITEM "Refresh Drive &H:",   IDM_MENU_BASE + 7
+        MENUITEM "Refresh Drive &I:",   IDM_MENU_BASE + 8
+        MENUITEM "Refresh Drive &J:",   IDM_MENU_BASE + 9
+        MENUITEM "Refresh Drive &K:",   IDM_MENU_BASE + 10
+        MENUITEM "Refresh Drive &L:",   IDM_MENU_BASE + 11
+        MENUITEM "Refresh Drive &M:",   IDM_MENU_BASE + 12
+        MENUITEM "Refresh Drive &N:",   IDM_MENU_BASE + 13
+        MENUITEM "Refresh Drive &O:",   IDM_MENU_BASE + 14
+        MENUITEM "Refresh Drive &P:",   IDM_MENU_BASE + 15
+        MENUITEM "Refresh Drive &Q:",   IDM_MENU_BASE + 16
+        MENUITEM "Refresh Drive &R:",   IDM_MENU_BASE + 17
+        MENUITEM "Refresh Drive &S:",   IDM_MENU_BASE + 18
+        MENUITEM "Refresh Drive &T:",   IDM_MENU_BASE + 19
+        MENUITEM "Refresh Drive &U:",   IDM_MENU_BASE + 20
+        MENUITEM "Refresh Drive &V:",   IDM_MENU_BASE + 21
+        MENUITEM "Refresh Drive &W:",   IDM_MENU_BASE + 22
+        MENUITEM "Refresh Drive &X:",   IDM_MENU_BASE + 23
+        MENUITEM "Refresh Drive &Y:",   IDM_MENU_BASE + 24
+        MENUITEM "Refresh Drive &Z:",   IDM_MENU_BASE + 25
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",               ID_APP_EXIT
+    }
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME "CDriveView Demo"
+END

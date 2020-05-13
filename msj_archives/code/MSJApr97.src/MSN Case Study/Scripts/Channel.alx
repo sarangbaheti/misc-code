@@ -1,0 +1,554 @@
+
+<SCRIPT LANGUAGE="VBScript">
+<!--
+
+dim iCurrentChannel, iCurrentMenuItem, bSPLDownloaded
+
+Sub CoreUI_OnLoad()
+	On Error Resume Next
+	Dim iIndex
+
+	' *******************************************************
+	' Check to see if all ActiveX objects are functioning
+	' *******************************************************
+	If Not IsObject(light) Then
+		top.global.ConfigError()
+	End If
+	If not IsObject(Label1) Then
+		top.global.ConfigError()
+	End if
+	If not IsObject(HotSpot1) Then
+		top.global.ConfigError()
+	End if
+	If Not IsObject(Categories) Then
+		top.global.ConfigError()
+	End If
+	If Not IsObject(Promo) Then
+		top.global.ConfigError()
+	End If
+	If Not IsObject(BigArt) Then
+		top.global.ConfigError()
+	End If
+
+	iCurrentChannel = 0
+	bSPLDownloaded = False
+	BigArt.Visible = False
+	light.visible = False
+
+	' *******************************************************
+	' Positions the controls at run-time for the vertical
+	' location and the Z-order.  Notice the use of the
+	' Controls() collection.
+	' *******************************************************
+	BigArt.ZOrder(1)
+	Light.ZOrder(1)
+	Promo.ZOrder(0)
+	For iIndex = 1 to 8
+		CoreUI.Controls("Label" & CStr(iIndex)).Visible = False
+		CoreUI.Controls("Label" & CStr(iIndex)).top = 23 + (iIndex * 17)
+		CoreUI.Controls("HotSpot" & CStr(iIndex)).top = 23 + (iIndex * 17)
+		CoreUI.Controls("Label" & CStr(iIndex)).ZOrder(0)
+		CoreUI.Controls("HotSpot" & CStr(iIndex)).ZOrder(0)
+	Next
+
+	' *******************************************************
+	' Begin loading the channel FutureSplash animation and
+	' the background spotlight graphic
+	' *******************************************************
+	channels.Movie = "image/channel.spl"
+	Light.PicturePath = "image/light.gif"
+
+
+	' *******************************************************
+	' Prompt the user that something is going on
+	' *******************************************************
+	label2.left = 180
+	label2.caption = "Building Channels..."
+	label2.visible = true
+end sub
+
+sub Categories_OnProgress(percentDone)
+	' *******************************************************
+	' This event is fired by the FutureSplash ActiveX
+	' control.  It provides a progress of the download.  When
+	' enough of the animation is downloaded to play, then
+	' percentDone is 100. Be aware that you can still get
+	' data streaming in while the animation is playing.
+	' *******************************************************	
+	if ((percentDone = 100) and (bSPLDownloaded = False)) then
+		label2.visible = False
+		bSPLDownloaded = True
+		Promo.movie = "image/splash.spl"
+		Promo.play
+	end if
+end sub
+
+Function GetMaxMenuItemWidth()
+	' *******************************************************
+	' Find the widest show name by looking at the label
+	' control's width
+	' *******************************************************
+	Dim iMaxWidth, iIndex
+	iMaxWidth = 0
+	For iIndex = 1 to top.global.ini1.ServiceCount
+		If CoreUI.Controls("Label" & CStr(iIndex)).Width > iMaxWidth Then
+			iMaxWidth = CoreUI.Controls("Label" & CStr(iIndex)).Width
+		End If
+	Next
+	GetMaxMenuItemWidth = iMaxWidth
+end function
+
+Sub SetMenuItemState(iMenuItem)
+	' *******************************************************
+	' Change the color of a clicked channel to red or clear
+	' all the channels back to white if called with zero.
+	' *******************************************************
+	Select Case iMenuItem
+		Case 0
+			For iIndex = 1 to 8
+				CoreUI.Controls("Label" & CStr(iIndex)).ForeColor = &H00FFFFFF
+			Next
+		Case Else
+			if (iCurrentMenuItem <> 0) then	CoreUI.Controls("Label" & CStr(iCurrentMenuItem)).ForeColor = &H00FFFFFF
+			CoreUI.Controls("Label" & CStr(iMenuItem)).ForeColor = &H005555CC		
+	End Select
+	iCurrentMenuItem = iMenuItem
+end sub
+
+' *******************************************************
+' The following event handlers for the HotSpot controls
+' change the color when the user moves the cursor into
+' and out of the hotspot region and if the user clicks
+' plays promotional information on the service clicked.
+' *******************************************************
+Sub HotSpot8_Click()
+	SetMenuItemState(8)
+	PlayPromo(8)
+end sub
+
+Sub HotSpot8_MouseEnter()
+	if iCurrentMenuItem <> 8 then Label8.ForeColor = &H00996633
+end sub
+
+Sub HotSpot8_MouseExit()
+	if iCurrentMenuItem <> 8 then Label8.ForeColor = &H00FFFFFF
+end sub
+
+Sub HotSpot7_Click()
+	SetMenuItemState(7)
+	PlayPromo(7)
+end sub
+
+Sub HotSpot7_MouseExit()
+	if iCurrentMenuItem <> 7 then Label7.ForeColor = &H00FFFFFF
+end sub
+
+Sub HotSpot7_MouseEnter()
+	if iCurrentMenuItem <> 7 then Label7.ForeColor = &H00996633
+end sub
+
+Sub HotSpot6_Click()
+	SetMenuItemState(6)
+	PlayPromo(6)
+end sub
+
+Sub HotSpot6_MouseExit()
+	if iCurrentMenuItem <> 6 then Label6.ForeColor = &H00FFFFFF
+end sub
+
+Sub HotSpot6_MouseEnter()
+	if iCurrentMenuItem <> 6 then Label6.ForeColor = &H00996633
+end sub
+
+Sub HotSpot5_Click()
+	SetMenuItemState(5)
+	PlayPromo(5)
+end sub
+
+Sub HotSpot5_MouseExit()
+	if iCurrentMenuItem <> 5 then Label5.ForeColor = &H00FFFFFF
+end sub
+
+Sub HotSpot5_MouseEnter()
+	if iCurrentMenuItem <> 5 then Label5.ForeColor = &H00996633
+end sub
+
+Sub HotSpot4_Click()
+	SetMenuItemState(4)
+	PlayPromo(4)
+end sub
+
+Sub HotSpot4_MouseExit()
+	if iCurrentMenuItem <> 4 then Label4.ForeColor = &H00FFFFFF
+end sub
+
+Sub HotSpot4_MouseEnter()
+	if iCurrentMenuItem <> 4 then Label4.ForeColor = &H00996633
+end sub
+
+Sub HotSpot3_Click()
+	SetMenuItemState(3)
+	PlayPromo(3)
+end sub
+
+Sub HotSpot3_MouseExit()
+	if iCurrentMenuItem <> 3 then Label3.ForeColor = &H00FFFFFF
+end sub
+
+Sub HotSpot3_MouseEnter()
+	if iCurrentMenuItem <> 3 then Label3.ForeColor = &H00996633
+end sub
+
+Sub HotSpot2_Click()
+	SetMenuItemState(2)
+	PlayPromo(2)
+end sub
+
+Sub HotSpot2_MouseExit()
+	if iCurrentMenuItem <> 2 then Label2.ForeColor = &H00FFFFFF
+end sub
+
+Sub HotSpot2_MouseEnter()
+	if iCurrentMenuItem <> 2 then Label2.ForeColor = &H00996633
+end sub
+
+Sub HotSpot1_Click()
+	SetMenuItemState(1)
+	PlayPromo(1)
+end sub
+
+Sub HotSpot1_MouseEnter()
+	if iCurrentMenuItem <> 1 then Label1.ForeColor = &H00996633
+end sub
+
+Sub HotSpot1_MouseExit()
+	if iCurrentMenuItem <> 1 then Label1.ForeColor = &H00FFFFFF
+end sub
+
+
+Sub PlayPromo(iMenuItem)
+	' *******************************************************
+	' Plays the FutureSplash animation for promotional
+	' information on the current channel and service
+	' selected
+	' *******************************************************
+	Promo.Movie = "promo/" & cstr(iCurrentChannel) & cstr(iMenuItem) & ".spl"
+	Promo.Visible = True
+	Promo.Play
+end Sub
+
+Sub MenuBuild()
+	' *******************************************************
+	' Reads from the INI file to get the names of the
+	' shows to update the label controls.  Then moves
+	' them and the hotspots to the correct coordinates.
+	' *******************************************************
+	Dim iIndex
+
+	for iIndex = 1 to top.global.ini1.ServiceCount
+		CoreUI.Controls("Label" & CStr(iIndex)).Visible = false
+		CoreUI.Controls("Label" & CStr(iIndex)).Caption = top.global.ini1.GetName(iIndex)
+
+		Select Case iCurrentChannel
+			Case 1
+				CoreUI.Controls("Label" & CStr(iIndex)).TextAlign = 1
+				CoreUI.Controls("Label" & CStr(iIndex)).Left = 11
+			Case 2
+				CoreUI.Controls("Label" & CStr(iIndex)).TextAlign = 3
+				CoreUI.Controls("Label" & CStr(iIndex)).Left = 148 - CoreUI.Controls("Label" & CStr(iIndex)).Width
+			Case 3
+				CoreUI.Controls("Label" & CStr(iIndex)).TextAlign = 3
+				CoreUI.Controls("Label" & CStr(iIndex)).Left = 226 - CoreUI.Controls("Label" & CStr(iIndex)).Width
+			Case 4
+				CoreUI.Controls("Label" & CStr(iIndex)).TextAlign = 1
+				CoreUI.Controls("Label" & CStr(iIndex)).Left = 250
+			Case 5
+				CoreUI.Controls("Label" & CStr(iIndex)).TextAlign = 1
+				CoreUI.Controls("Label" & CStr(iIndex)).Left = 329
+			Case 6
+				CoreUI.Controls("Label" & CStr(iIndex)).TextAlign = 3
+				CoreUI.Controls("Label" & CStr(iIndex)).Left = 468 - CoreUI.Controls("Label" & CStr(iIndex)).Width
+		End Select
+
+		CoreUI.Controls("HotSpot" & CStr(iIndex)).Width = CoreUI.Controls("Label" & CStr(iIndex)).Width
+		CoreUI.Controls("HotSpot" & CStr(iIndex)).Left = CoreUI.Controls("Label" & CStr(iIndex)).Left
+
+		CoreUI.Controls("Label" & CStr(iIndex)).Visible = True
+		CoreUI.Controls("HotSpot" & CStr(iIndex)).Visible = True
+	next
+	for iIndex = (top.global.ini1.ServiceCount + 1) to 8
+		CoreUI.Controls("Label" & CStr(iIndex)).Visible = false
+		CoreUI.Controls("HotSpot" & CStr(iIndex)).Visible = false
+	next
+end sub
+
+Sub ChannelBuild(iCatNum)
+	' *******************************************************
+	' Switches the interface from one channel to another.
+	' It stops the promotional FutureSplash animation,
+	' points the INI control to the new channel, calls
+	' a routine to build the list of services, moves the
+	' spotlight graphic and updates the channel art.
+	' *******************************************************	
+	Promo.stop
+	Promo.Visible = false
+	BigArt.Visible = false 
+	Light.Visible = false
+	
+	top.global.ini1.SetCategory(iCatNum)
+	MenuBuild()
+
+	Select Case iCatNum
+		Case 1
+			Light.Left = 22
+			Promo.Left = (Label1.Left + GetMaxMenuItemWidth()) + 10
+			BigArt.Left = (CoreUI.Width - BigArt.Width) - 10
+		Case 2
+			Light.Left = 98
+			Promo.Left = (Label1.Left + Label1.Width) + 10
+			BigArt.Left = (CoreUI.Width - BigArt.Width) - 10
+		Case 3
+			Light.Left = 174
+			Promo.Left = (Label1.Left + Label1.Width) + 10
+			BigArt.Left = 6
+		Case 4
+			Light.Left = 250
+			Promo.Left = (Label1.Left - Promo.Width) - 10
+			BigArt.Left = (CoreUI.Width - BigArt.Width) - 10
+		Case 5
+			Light.Left = 328
+			Promo.Left = (Label1.Left - Promo.Width) - 10
+			BigArt.Left = 6
+		Case 6
+			Light.Left = 406
+			Promo.Left = (Label1.Left - Promo.Width) - 10
+			BigArt.Left = 6
+		End Select
+
+	Light.Visible = true
+	BigArt.PicturePath = "image/big0" & cstr(iCurrentChannel) & ".jpg"
+	BigArt.Visible = true
+end sub
+
+Sub Channels_FSCommand(command, args)
+	' *******************************************************
+	' Event fired from FutureSplash when the user clicks a
+	' channel button.  On the first time, it moves and
+	' resizes the FutureSplash control that was used to first
+	' show a splash screen.
+	' *******************************************************
+	SetMenuItemState(0)
+	if iCurrentChannel = 0 then
+		promo.stop
+		promo.visible=false
+		promo.width=182
+		promo.height=153
+	end if
+	iCurrentChannel = cint(command)
+	ChannelBuild cint(command)
+end Sub
+
+Sub Promo_FSCommand(command, args)
+	' *******************************************************
+	' Event fired from FutureSplash when the user clicks the
+	' promotional information for a service.  It navigates
+	' the users browser directly to the service by getting
+	' the service's URL from the INI control.
+	' *******************************************************
+	top.navigate(top.global.ini1.GetURL(iCurrentMenuItem))
+end Sub
+
+-->
+</SCRIPT>
+<!--
+*******************************************************
+The objects below are the declarations used to create
+them on the HTML Layout control.
+*******************************************************
+-->
+<DIV BACKGROUND="#0" ID="CoreUI" STYLE="LAYOUT:FIXED;WIDTH:479pt;HEIGHT:274pt;">
+		<OBJECT ID="Light"
+		 CLASSID="CLSID:D4A97620-8E8F-11CF-93CD-00AA00C08FDF" STYLE="TOP:0pt;LEFT:18pt;WIDTH:53pt;HEIGHT:180pt;ZINDEX:0;">
+				<PARAM NAME="BorderStyle" VALUE="0">
+				<PARAM NAME="SizeMode" VALUE="1">
+				<PARAM NAME="Size" VALUE="1870;6350">
+				<PARAM NAME="PictureAlignment" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="19">
+		</OBJECT>
+		<OBJECT ID="Label1"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:43pt;LEFT:209pt;WIDTH:37pt;HEIGHT:12pt;ZINDEX:1;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label1">
+				<PARAM NAME="Size" VALUE="1296;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="Label2"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:56pt;LEFT:209pt;WIDTH:100pt;HEIGHT:12pt;ZINDEX:2;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label2">
+				<PARAM NAME="Size" VALUE="3528;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="Label3"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:67pt;LEFT:209pt;WIDTH:100pt;HEIGHT:12pt;ZINDEX:3;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label3">
+				<PARAM NAME="Size" VALUE="3528;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="Label4"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:79pt;LEFT:209pt;WIDTH:100pt;HEIGHT:12pt;ZINDEX:4;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label4">
+				<PARAM NAME="Size" VALUE="3528;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="Label5"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:92pt;LEFT:209pt;WIDTH:100pt;HEIGHT:12pt;ZINDEX:5;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label5">
+				<PARAM NAME="Size" VALUE="3528;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="Label6"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:106pt;LEFT:209pt;WIDTH:100pt;HEIGHT:12pt;ZINDEX:6;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label6">
+				<PARAM NAME="Size" VALUE="3528;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="Label7"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:117pt;LEFT:209pt;WIDTH:100pt;HEIGHT:12pt;ZINDEX:7;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label7">
+				<PARAM NAME="Size" VALUE="3528;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="Label8"
+		 CLASSID="CLSID:978C9E23-D4B0-11CE-BF2D-00AA003F40D0" STYLE="TOP:144pt;LEFT:209pt;WIDTH:100pt;HEIGHT:12pt;ZINDEX:8;">
+				<PARAM NAME="ForeColor" VALUE="16777215">
+				<PARAM NAME="BackColor" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="268435475">
+				<PARAM NAME="Caption" VALUE="Label8">
+				<PARAM NAME="Size" VALUE="3528;423">
+				<PARAM NAME="FontName" VALUE="Verdana">
+				<PARAM NAME="FontEffects" VALUE="1073741825">
+				<PARAM NAME="FontHeight" VALUE="200">
+				<PARAM NAME="FontCharSet" VALUE="0">
+				<PARAM NAME="FontPitchAndFamily" VALUE="2">
+				<PARAM NAME="FontWeight" VALUE="700">
+		</OBJECT>
+		<OBJECT ID="HotSpot1"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:45pt;LEFT:135pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:9;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="HotSpot2"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:58pt;LEFT:137pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:10;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="HotSpot3"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:78pt;LEFT:137pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:11;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="HotSpot4"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:81pt;LEFT:135pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:12;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="HotSpot5"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:92pt;LEFT:135pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:13;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="HotSpot6"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:106pt;LEFT:135pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:14;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="HotSpot7"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:119pt;LEFT:135pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:15;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="HotSpot8"
+		 CLASSID="CLSID:2B32FBC2-A8F1-11CF-93EE-00AA00C08FDF" STYLE="TOP:130pt;LEFT:135pt;WIDTH:75pt;HEIGHT:12pt;ZINDEX:16;">
+				<PARAM NAME="VariousPropertyBits" VALUE="8388627">
+				<PARAM NAME="Size" VALUE="2646;423">
+		</OBJECT>
+		<OBJECT ID="Categories"
+		 CLASSID="CLSID:D27CDB6E-AE6D-11CF-96B8-444553540000" STYLE="TOP:180pt;LEFT:0pt;WIDTH:480pt;HEIGHT:100pt;TABINDEX:17;ZINDEX:20;">
+				<PARAM NAME="Movie" VALUE="">
+				<PARAM NAME="Loop" VALUE="0">
+				<PARAM NAME="Play" VALUE="0">
+				<PARAM NAME="Bgcolor" VALUE="000000">
+				<PARAM NAME="Quality" VALUE="AutoHigh">
+		</OBJECT>
+		<OBJECT ID="Promo"
+		 CLASSID="CLSID:D27CDB6E-AE6D-11CF-96B8-444553540000" STYLE="TOP:0pt;LEFT:0pt;WIDTH:480pt;HEIGHT:180pt;ZINDEX:18;">
+				<PARAM NAME="Movie" VALUE="">
+				<PARAM NAME="Loop" VALUE="0">
+				<PARAM NAME="Play" VALUE="0">
+				<PARAM NAME="Bgcolor" VALUE="000000">
+				<PARAM NAME="Quality" VALUE="AutoHigh">
+		</OBJECT>
+		<OBJECT ID="BigArt"
+		 CLASSID="CLSID:D4A97620-8E8F-11CF-93CD-00AA00C08FDF" STYLE="TOP:0pt;LEFT:0pt;WIDTH:118pt;HEIGHT:180pt;ZINDEX:22;">
+				<PARAM NAME="BorderStyle" VALUE="0">
+				<PARAM NAME="SizeMode" VALUE="1">
+				<PARAM NAME="Size" VALUE="4163;6350">
+				<PARAM NAME="PictureAlignment" VALUE="0">
+				<PARAM NAME="VariousPropertyBits" VALUE="19">
+		</OBJECT>
+</DIV>

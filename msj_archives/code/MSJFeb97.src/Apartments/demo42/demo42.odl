@@ -1,0 +1,66 @@
+// demo42.odl : type library source for OLE Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (demo42.tlb) that will become a resource in
+// demo42.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(B18D5920-3101-11D0-906F-00608C86B89C), version(1.0),
+  helpstring("demo42 OLE Control module"), control ]
+library DEMO42Lib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CDemo42Ctrl
+
+	[ uuid(B18D5921-3101-11D0-906F-00608C86B89C),
+	  helpstring("Dispatch interface for Demo42 Control"), hidden ]
+	dispinterface _DDemo42
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDemo42Ctrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDemo42Ctrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDemo42Ctrl
+
+	[ uuid(B18D5922-3101-11D0-906F-00608C86B89C),
+	  helpstring("Event interface for Demo42 Control") ]
+	dispinterface _DDemo42Events
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDemo42Ctrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDemo42Ctrl
+
+	[ uuid(B18D5923-3101-11D0-906F-00608C86B89C),
+	  helpstring("Demo42 Control"), control ]
+	coclass Demo42
+	{
+		[default] dispinterface _DDemo42;
+		[default, source] dispinterface _DDemo42Events;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

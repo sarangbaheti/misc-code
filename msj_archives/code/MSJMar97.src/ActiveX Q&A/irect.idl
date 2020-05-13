@@ -1,0 +1,44 @@
+///////////////////////////////////////////////
+//
+// irect.idl
+// Copyright 1997, Don Box Inc.
+//
+// This file defines a COM rectangle
+//
+
+[
+    uuid(D07B8DA4-4BE1-11d0-B3B3-0080C7BC7884),
+    version(1.0),
+    lcid(9),
+    helpstring("Rectangle By Value")
+]
+library RectByValLib
+{
+    importlib("stdole32.tlb");
+    [
+        uuid(D07B8DA5-4BE1-11d0-B3B3-0080C7BC7884),
+        object,
+        dual,
+        oleautomation,
+        nonextensible
+    ]
+    interface IRect : IDispatch
+    {
+        [propput, id(1)] HRESULT Top([in] long val);
+        [propget, id(1)] HRESULT Top([out, retval] long *pval);
+        [propput, id(2)] HRESULT Left([in] long val);
+        [propget, id(2)] HRESULT Left([out, retval] long *pval);
+        [propput, id(3)] HRESULT Bottom([in] long val);
+        [propget, id(3)] HRESULT Bottom([out, retval] long *pval);
+        [propput, id(4)] HRESULT Right([in] long val);
+        [propget, id(4)] HRESULT Right([out, retval] long *pval);
+    }
+
+    [
+        uuid(D07B8DA6-4BE1-11d0-B3B3-0080C7BC7884)
+    ]
+    coclass RectByValue
+    {
+        interface IRect;
+    }
+}

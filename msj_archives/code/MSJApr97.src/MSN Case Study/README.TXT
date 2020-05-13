@@ -1,0 +1,1 @@
+You must have the ActiveX SDK installed in order to compile these programs.

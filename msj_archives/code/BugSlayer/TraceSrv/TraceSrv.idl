@@ -1,0 +1,220 @@
+/*----------------------------------------------------------------------
+John Robbins
+Microsoft Systems Journal, December 1997 - BugSlayer Column!
+----------------------------------------------------------------------*/
+import "oaidl.idl" ;
+import "ocidl.idl" ;
+
+// Forward declarations.
+interface ITrace ;
+dispinterface _TraceEvent ;
+
+[
+    uuid ( 76AA99F4-0228-11D1-B293-00AA004206E4 ) ,
+    helpstring ( "ITrace Interface" ) ,
+    // Mark this as a dual interface.
+    dual ,
+    // Mark this interface as compatible with OLE automation.
+    oleautomation
+]
+interface ITrace : IDispatch
+{
+
+    [
+        id ( 0x00000001 ) ,
+        helpstring ( "Tracing output method" )
+    ]
+    // The simple method that everyone will call.
+    HRESULT Trace ( [in] BSTR bstrText ) ;
+
+    // For advanced users, or cool wrappers.
+    HRESULT FullTrace ( [in] BSTR       bstrText ,
+                        [in] long       dwPID     ) ;
+
+    ////////////////////////////////////////////////////////////////////
+    // ShowTimeStamps property.
+    ////////////////////////////////////////////////////////////////////
+    [
+        propget     ,
+        id ( 2 )    ,
+        helpstring("If set, puts the time the trace message was received by the server on the front of the message.")
+    ]
+    HRESULT ShowTimeStamps ( [out , retval ] VARIANT_BOOL *pVal ) ;
+
+    [
+        propput     ,
+        id ( 2 )    ,
+        helpstring("If set, puts the time the trace message was received by the server on the front of the message.")
+    ]
+    HRESULT ShowTimeStamps ( [in] VARIANT_BOOL newVal ) ;
+
+    ////////////////////////////////////////////////////////////////////
+    // ShowTraceAsODS property
+    ////////////////////////////////////////////////////////////////////
+    [
+        propget     ,
+        id ( 3 )    ,
+        helpstring("Sends the Trace string to kernel debuggers on the server system.")
+    ]
+    HRESULT ShowTraceAsODS ( [out , retval ] VARIANT_BOOL *pVal ) ;
+
+    [
+        propput     ,
+        id ( 3 )    ,
+        helpstring("Sends the Trace string to kernel debuggers on the server system.")
+    ]
+    HRESULT ShowTraceAsODS ( [in] VARIANT_BOOL newVal ) ;
+
+    ////////////////////////////////////////////////////////////////////
+    // ShowItemNumber property
+    ////////////////////////////////////////////////////////////////////
+    [
+        propget     ,
+        id ( 4 )    ,
+        helpstring("If set, puts the trace message count on the front of the message.")
+    ]
+    HRESULT ShowItemNumber ( [out , retval ] VARIANT_BOOL *pVal ) ;
+
+    [
+        propput     ,
+        id ( 4 )    ,
+        helpstring("If set, puts the trace message count on the front of the message.")
+    ]
+    HRESULT ShowItemNumber ( [in] VARIANT_BOOL newVal ) ;
+
+    ////////////////////////////////////////////////////////////////////
+    // ShowPID property
+    ////////////////////////////////////////////////////////////////////
+    [
+        propget     ,
+        id ( 5 )    ,
+        helpstring("If set, and the PID is passed in, will show the PID in the message.")
+    ]
+    HRESULT ShowPID ( [out , retval ] VARIANT_BOOL *pVal ) ;
+
+    [
+        propput     ,
+        id ( 5 )    ,
+        helpstring("If set, and the PID is passed in, will show the PID in the message.")
+    ]
+    HRESULT ShowPID ( [in] VARIANT_BOOL newVal ) ;
+
+    ////////////////////////////////////////////////////////////////////
+    // AddCRLF property
+    ////////////////////////////////////////////////////////////////////
+    [
+        propget     ,
+        id ( 6 )    ,
+        helpstring("If set, adds a CR/LF to the message if needed.")
+    ]
+    HRESULT AddCRLF ( [out , retval ] VARIANT_BOOL *pVal ) ;
+
+    [
+        propput     ,
+        id ( 6 )    ,
+        helpstring("If set, adds a CR/LF to the message if needed.")
+    ]
+    HRESULT AddCRLF ( [in] VARIANT_BOOL newVal ) ;
+
+} ;
+
+[
+    object  ,
+    uuid ( D4C22CC0-0620-11D1-B29A-00aa004206e4 ) ,
+    helpstring ( "ITraceEvent Interface" ),
+    // Mark as hidden for user browsers.
+    //hidden
+]
+interface ITraceEvent : IDispatch
+{
+    HRESULT TraceEvent ( BSTR bstrText ) ;
+
+    HRESULT ChangeShowTimeStamps ( VARIANT_BOOL bNewVal ) ;
+
+    HRESULT ChangeShowTraceAsODS ( VARIANT_BOOL bNewVal ) ;
+
+    HRESULT ChangeShowItemNumber ( VARIANT_BOOL bNewVal ) ;
+
+    HRESULT ChangeShowPID ( VARIANT_BOOL bNewVal ) ;
+
+    HRESULT ChangeAddCRLF ( VARIANT_BOOL bNewVal ) ;
+
+} ;
+
+[
+    uuid ( C1262E40-0186-11D1-B292-00AA004206E4 ) ,
+    version ( 1.0 ) ,
+    helpstring ( "TraceSrv 1.0 Type Library" )
+]
+library TRACESRVLib
+{
+    // Import the specified standard libraries into this library.
+    importlib ( "stdole32.tlb" ) ;
+    importlib ( "stdole2.tlb" ) ;
+
+    [
+        uuid ( 480F47B3-02F0-11D1-B296-00AA004206E4 ) ,
+        helpstring ( "TraceSrv notification events for trace viewers" ),
+        // Mark as hidden for user browsers.
+        //hidden
+    ]
+    dispinterface DITraceEvent
+    {
+        properties  :
+        methods     :
+
+            [
+                id ( 0x00000001 ) ,
+                helpstring ( "Tells the viewer that an ODS string is here" ),
+            ]
+            void TraceEvent ( [in] BSTR bstrText ) ;
+
+            [
+                id ( 0x00000002 ) ,
+                helpstring ( "Tells the viewer the state of the ShowTimeStamps property" ),
+            ]
+            void ChangeShowTimeStamps ( [in] VARIANT_BOOL bNewVal ) ;
+
+            [
+                id ( 0x00000003 ) ,
+                helpstring ( "Tells the viewer the state of the ShowTraceAsODS property" ),
+            ]
+            void ChangeShowTraceAsODS ( [in] VARIANT_BOOL bNewVal ) ;
+
+            [
+                id ( 0x00000004 ) ,
+                helpstring ( "Tells the viewer the state of the ShowItemNumber property" ),
+            ]
+            void ChangeShowItemNumber ( [in] VARIANT_BOOL bNewVal ) ;
+
+            [
+                id ( 0x00000005 ) ,
+                helpstring ( "Tells the viewer the state of the ShowPID property" ),
+            ]
+            void ChangeShowPID ( [in] VARIANT_BOOL bNewVal ) ;
+
+            [
+                id ( 0x00000006 ) ,
+                helpstring ( "Tells the viewer the state of the AddCRLF property" ),
+            ]
+            void ChangeAddCRLF ( [in] VARIANT_BOOL bNewVal ) ;
+
+    } ;
+
+    ////////////////////////////////////////////////////////////////////
+    // Trace coclass supported interface attributes.
+    ////////////////////////////////////////////////////////////////////
+    [
+        uuid ( 76AA99F5-0228-11D1-B293-00AA004206E4 ) ,
+        helpstring ( "Trace Class" )
+    ]
+    coclass Trace
+    {
+        // The default input interface.
+        [default] interface ITrace  ;
+        // The event interface.
+        interface ITraceEvent       ;
+        // The dispinterface needed to trigger events in VB.
+        [default , source] dispinterface DITraceEvent ;
+    } ;
+} ;

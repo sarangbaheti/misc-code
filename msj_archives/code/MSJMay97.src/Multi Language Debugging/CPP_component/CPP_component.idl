@@ -1,0 +1,67 @@
+// CPP_component.idl : IDL source for CPP_component.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CPP_component.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+/** almost all of this file's contents are new **/
+
+[
+object,
+uuid(C8D363E5-FC5C-11CF-A288-00A0C905A457),
+dual,
+helpstring("IStock Interface"),
+pointer_default(unique)
+]
+
+interface IStock : IDispatch
+	{
+	import "oaidl.idl";
+
+	[
+	helpstring("Buys Stock if Available")
+	]
+	HRESULT Buy([in] long lAccount, [in] BSTR bstrStock,
+			[in] long lShares, [in] double dblPrice);
+
+	[
+	helpstring("Sells Stock if Available")
+	]
+	HRESULT Sell([in] long lAccount, [in] BSTR bstrStock,
+			[in] long lShares, [in] double dblPrice);
+
+	[
+	propput,
+	helpstring("Sets Commission")
+	]
+	HRESULT Commission([in] double dblCommission);
+		
+	[
+	propget,
+	helpstring("Gets Commission")
+	]
+	HRESULT Commission([out, retval] double* retval);		
+	};
+
+
+[
+uuid(C8D363E3-FC5C-11CF-A288-00A0C905A457),
+version(1.0),
+helpstring("CPP_component 1.0 Type Library")
+]
+
+library CPP_COMPONENTLib
+	{
+	importlib("stdole32.tlb");
+	[
+	uuid(C8D363E9-FC5C-11CF-A288-00A0C905A457),
+	helpstring("Stock Class")
+	]
+	coclass CStock
+		{
+		[default] interface IStock;
+		};
+	};

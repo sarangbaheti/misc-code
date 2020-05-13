@@ -1,0 +1,30 @@
+/ res
+
++ROOT.CPP	$$root$$.cpp
+ROOT.H	$$root$$.h
++ROOT.RC	$$root$$.rc
+ROOT.CLW	$$root$$.clw
++STDAFX.CPP	stdafx.cpp
+STDAFX.H	sdtafx.h
++MAINWND.CPP	mainwnd.cpp
+MAINWND.H	mainwnd.h
+RESOURCE.H	resource.h
+
+$$IF(datapane)
++DATAPANE.CPP	datapane.cpp
+DATAPANE.H	datapane.h
+$$ENDIF
+
+$$IF(stdpane)
++STDPANE.CPP	stdpane.cpp
+STDPANE.H	stdpane.h
+$$ENDIF
+
+$$IF(treepane)
++TREEPANE.CPP	treepane.cpp
+TREEPANE.H	treepane.h
+$$ENDIF
+
+$$IF(toolbar)
+TOOLBAR.BMP	res\toolbar.bmp
+$$ENDIF

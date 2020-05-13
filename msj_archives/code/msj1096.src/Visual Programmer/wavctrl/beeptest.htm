@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>New Page</TITLE>
+</HEAD>
+<BODY>
+<FORM name="frm1">
+<OBJECT ID="cmdbtn" WIDTH=96 HEIGHT=32
+ CLASSID="CLSID:D7053240-CE69-11CD-A777-00DD01143C57">
+    <PARAM NAME="Caption" VALUE="Speak!">
+    <PARAM NAME="Size" VALUE="2540;846">
+    <PARAM NAME="FontCharSet" VALUE="0">
+    <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    <PARAM NAME="ParagraphAlign" VALUE="3">
+    <PARAM NAME="FontWeight" VALUE="0">
+</OBJECT>
+<OBJECT 
+	CLASSID="clsid:5BB5C4E3-D723-11CF-A521-00A024A652FA"
+	WIDTH=100 
+	HEIGHT=51
+	hspace=0
+	vspace=0
+	ID=WC001 
+>
+</OBJECT>
+<OBJECT
+	CLASSID="clsid:59ccb4a0-727d-11cf-ac36-00aa00a47dd2"
+	CODEBASE="http://www.microsoft.com/ie/download/activex/ietimer.ocx#version=4,70,0,1086"
+	id=Timer1
+	align=middle
+>
+<param name="Interval" value="100">
+<param name="Enabled" value="True">
+</OBJECT>
+</FORM>
+
+<SCRIPT language="VBScript">
+Sub Timer1_Timer
+	set frm = document.frm1
+	frm.cmdbtn.caption = Time
+End Sub	
+		
+Sub cmdbtn_Click
+' Whenever the user clicks on the time label, set into
+' motion the code for saying the time.
+	set frm = document.frm1
+
+    TimeStr = Time
+     
+    ' Get the parsing positions within TimeStr$
+
+    Colon1 = InStr(TimeStr, ":")
+    Colon2 = InStr(Colon1 + 1, TimeStr, ":")
+    Space1 = InStr(Colon2 + 1, TimeStr, " ")
+
+    ' Parse the three components. Here, Hrs is taken Mod 12 to avoid
+    ' the 24-hour clock if it exists
+
+    Hrs = (Left(TimeStr, Colon1 - 1)) Mod 12
+    Mins = (Mid(TimeStr, Colon1 + 1, 2))
+    Secs = (Mid(TimeStr, Colon2 + 1, 2))
+
+    If Hrs = 0 Then Hrs = 12
+
+    ' Pronounce the "it's"
+
+    frm.WC001.Play "its.wav"
+
+    ' The Hrs is simple - it is a digit between one and twelve, all of
+    ' which exist in separate sound files
+
+    frm.WC001.Play (Hrs + 0) & ".wav"
+    
+    ' Pronounce the "o'clock" on the hour
+
+    If Mins = 0 Then
+        frm.WC001.Play "oc.wav"
+
+    ' Pronounce "oh-mins" if mins is a single digit
+
+    ElseIf Mins < 10 Then
+        frm.WC001.Play "oh.wav"
+        frm.WC001.Play (Mins + 0) & ".wav"
+
+    ' Pronounce a teen digit in its entirety
+
+    ElseIf Mins < 20 Then
+        frm.WC001.Play (Mins + 0) & ".wav"
+
+    ' If the Mins are over 20, pronounce the tens part first, followed
+    ' by the ones part. For instance, 34 becomes "thirty" "four"
+
+    ElseIf Mins >= 20 Then
+        frm.WC001.Play ((Mins \ 10) * 10) & ".wav"
+        frm.WC001.Play (Mins Mod 10) & ".wav"
+    End If
+
+    ' Don't pronounce "and zero seconds"
+
+    If Secs = 0 Then Exit Sub
+
+    ' Pronounce your "and" after the minutes
+
+    frm.WC001.Play "and.wav"
+
+    ' You can just pronounce any number below twenty straight from the file,
+    ' becase you don't need to preface a single digit with an "oh"
+
+    If Secs < 20 Then
+        frm.WC001.Play (Secs + 0) & ".wav"
+
+    ' If there are more than 20 seconds, pronounce it in two chunks, just
+    ' like above for the minutes segment
+
+    ElseIf Secs >= 20 Then
+        frm.WC001.Play ((Secs \ 10) * 10)  & ".wav"
+        frm.WC001.Play (Secs Mod 10) & ".wav"
+    End If
+
+    ' Say the closing "second" or "seconds," depending upon the number
+    ' of seconds elapsed
+
+    If Secs = 1 Then
+        frm.WC001.Play "sec.wav"
+    Else
+        frm.WC001.Play "secs.wav"
+    End If
+
+End Sub
+</SCRIPT>
+</BODY>
+</HTML>

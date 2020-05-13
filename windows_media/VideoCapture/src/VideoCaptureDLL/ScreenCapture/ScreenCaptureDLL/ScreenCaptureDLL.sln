@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScreenCaptureDLL", "ScreenCaptureDLL\ScreenCaptureDLL.vcxproj", "{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DebugApp|Win32 = DebugApp|Win32
+		Release|Win32 = Release|Win32
+		ReleaseApp|Win32 = ReleaseApp|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.Debug|Win32.Build.0 = Debug|Win32
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.DebugApp|Win32.ActiveCfg = DebugApp|Win32
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.DebugApp|Win32.Build.0 = DebugApp|Win32
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.Release|Win32.ActiveCfg = Release|Win32
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.Release|Win32.Build.0 = Release|Win32
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.ReleaseApp|Win32.ActiveCfg = ReleaseApp|Win32
+		{A1FD2443-4B10-42D8-AEE2-3444225A8D1C}.ReleaseApp|Win32.Build.0 = ReleaseApp|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

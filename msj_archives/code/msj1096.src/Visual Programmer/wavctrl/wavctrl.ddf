@@ -1,0 +1,38 @@
+; Diamond directive file for Talking Clock WAV files
+.OPTION EXPLICIT	  ; Generate errors on variable typos
+.Set CabinetNameTemplate=CLOCK.CAB 
+
+; Files listed below are packed into cab files
+.Set Cabinet=on
+.Set Compress=on
+clokwav.INF
+wavctrl.OCX
+1.wav
+2.wav
+3.wav
+4.wav
+5.wav
+6.wav
+7.wav
+8.wav
+9.wav
+10.wav
+11.wav
+12.wav
+13.wav
+14.wav
+15.wav
+16.wav
+17.wav
+18.wav
+19.wav
+20.wav
+30.wav
+40.wav
+50.wav
+and.wav
+its.wav
+oh.wav
+oc.wav
+sec.wav
+secs.wav

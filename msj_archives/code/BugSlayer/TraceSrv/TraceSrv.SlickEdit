@@ -1,0 +1,41 @@
+[COMPILER]
+
+includedirs=%(INCLUDE)
+compile=
+make=concur|capture,nmake /nologo /s /f %y.mak CFG="TraceSrv - Win32 Unicode Debug"
+REBUILD=concur|capture,nmake /a /nologo /s /f %y.mak
+debug=,msdev -nologo .\Debug\%y
+user1=
+user2=
+
+execute=
+workingdir=
+tagfiles=
+[FILES]
+d:\dev\column\dec97\sourcecode\tracesrv\Resource.h
+d:\dev\column\dec97\sourcecode\tracesrv\StdAfx.cpp
+d:\dev\column\dec97\sourcecode\tracesrv\StdAfx.h
+d:\dev\column\dec97\sourcecode\tracesrv\TraceSrv.cpp
+d:\dev\column\dec97\sourcecode\tracesrv\TraceSrv.h
+d:\dev\column\dec97\sourcecode\tracesrv\TraceSrv.idl
+d:\dev\column\dec97\sourcecode\tracesrv\TraceSrv.rc
+[STATE]
+SCREEN: 1152 864 77 0 1075 836 -1 -1 N 0 31 0 50
+CWD: d:\dev\column\dec97\sourcecode\tracesrv
+FILEHIST: 9
+d:\dev\column\dec97\sourcecode\tracesrv\CorrectProxyTraceSrv.h
+d:\dev\column\dec97\sourcecode\tracesrv\FastBSTR.cpp
+d:\dev\column\dec97\sourcecode\tracesrv\FastBSTR.h
+d:\dev\column\dec97\sourcecode\tracesrv\Resource.h
+d:\dev\column\dec97\sourcecode\tracesrv\StdAfx.cpp
+d:\dev\column\dec97\sourcecode\tracesrv\StdAfx.h
+d:\dev\column\dec97\sourcecode\tracesrv\Trace.cpp
+d:\dev\column\dec97\sourcecode\tracesrv\Trace.h
+d:\dev\column\dec97\sourcecode\tracesrv\TraceSrv.cpp
+BOOKMARK: 0
+PUSHTAG: 0 1
+PRINTER: 2
+
+
+TOOLBARS: 1
+tbform1 13035 300

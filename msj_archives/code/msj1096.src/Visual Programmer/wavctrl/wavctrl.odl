@@ -1,0 +1,69 @@
+// wavctrl.odl : type library source for OLE Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (wavctrl.tlb) that will become a resource in
+// wavctrl.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(5BB5C4E0-D723-11CF-A521-00A024A652FA), version(1.0),
+  helpstring("wavctrl OLE Control module"), control ]
+library WAVCTRLLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CWavctrlCtrl
+
+	[ uuid(5BB5C4E1-D723-11CF-A521-00A024A652FA),
+	  helpstring("Dispatch interface for Wavctrl Control"), hidden ]
+	dispinterface _DWavctrl
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CWavctrlCtrl)
+			[id(DISPID_READYSTATE), readonly] long ReadyState;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CWavctrlCtrl)
+			[id(1)] void Play(BSTR lpWAV);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CWavctrlCtrl
+
+	[ uuid(5BB5C4E2-D723-11CF-A521-00A024A652FA),
+	  helpstring("Event interface for Wavctrl Control") ]
+	dispinterface _DWavctrlEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CWavctrlCtrl)
+			[id(DISPID_READYSTATECHANGE)] void ReadyStateChange();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CWavctrlCtrl
+
+	[ uuid(5BB5C4E3-D723-11CF-A521-00A024A652FA),
+	  helpstring("Wavctrl Control"), control ]
+	coclass Wavctrl
+	{
+		[default] dispinterface _DWavctrl;
+		[default, source] dispinterface _DWavctrlEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+};

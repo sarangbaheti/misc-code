@@ -1,0 +1,67 @@
+<HTML>
+<!--
+	********************************************************
+	    This hidden page provides global functionality that
+	    the entire service can use.  Because it is in a
+	    separate hidden frame, it can persist across pages
+	    that the user is viewing.
+	********************************************************
+-->
+<HEAD>
+<title>Global functions</title>
+<script language="VBScript">
+<!--
+
+sub Window_OnLoad
+	WaitForControls(0)
+end sub
+
+sub WaitForControls(loops)
+' ******************************************************
+'     This function waits 3 seconds for the ActiveX
+'     controls to load.  If not successful, prompts the
+'     user and sends them to a setup page.
+' ******************************************************
+	if (bAreControlsLoaded() = false) then
+		if loops < 10 then
+			t1 = SetTimeout("WaitForControls " & cstr(loops + 1), 300, "VBScript")
+		else
+			ConfigError()
+		end if
+	end if
+end sub
+
+function bAreControlsLoaded()
+' ******************************************************
+'     This function takes several steps to ensure that
+'     the ActiveX controls load properly. All steps are
+'     needed for reliable checking
+' ******************************************************
+	on error resume next
+
+	bAreControlsLoaded = FALSE
+	if (IsObject(ini1)) then
+		if (Err.Number <> 0) then exit function
+		If (ini1 is Nothing) then exit function
+		if (Err.Number <> 0) then exit function
+		bAreControlsLoaded = TRUE
+	end if
+end function
+
+Sub ConfigError()
+	MsgBox "We have detected you are missing some ActiveX Controls.	Click OK to visit the setup page where we will install the proper controls.",64,"Missing ActiveX Controls"
+	top.navigate("http://www.mysite.com/setup/")
+End Sub
+
+-->
+</script>
+</HEAD>
+<BODY>
+<OBJECT
+	id="Ini1"
+	classid="CLSID:A52D85E3-FF7B-11CF-95A3-00C04FD658CE"
+	width=0
+	height=0>
+</OBJECT>
+</BODY>
+</HTML>

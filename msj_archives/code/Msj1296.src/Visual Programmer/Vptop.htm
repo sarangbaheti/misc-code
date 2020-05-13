@@ -1,0 +1,64 @@
+<HTML>
+<BODY>
+
+<applet
+    code=VisProg.class
+    id=VisProg
+    width=1
+    height=1>
+</applet>
+
+
+<H2>Enter the URL to view:  </H2>
+
+
+<OBJECT ID="edtURL" WIDTH=351 HEIGHT=24
+ CLASSID="CLSID:8BD21D10-EC42-11CE-9E0D-00AA006002F3">
+    <PARAM NAME="VariousPropertyBits" VALUE="746604571">
+    <PARAM NAME="Size" VALUE="9278;635">
+    <PARAM NAME="Value" VALUE="http://www.microsoft.com/mind">
+    <PARAM NAME="FontCharSet" VALUE="0">
+    <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    <PARAM NAME="FontWeight" VALUE="0">
+</OBJECT>
+
+
+<OBJECT ID="btnGetURL" WIDTH=96 HEIGHT=32
+ CLASSID="CLSID:D7053240-CE69-11CD-A777-00DD01143C57">
+    <PARAM NAME="Caption" VALUE="Get URL">
+    <PARAM NAME="Size" VALUE="2540;847">
+    <PARAM NAME="FontCharSet" VALUE="0">
+    <PARAM NAME="FontPitchAndFamily" VALUE="2">
+    <PARAM NAME="ParagraphAlign" VALUE="3">
+    <PARAM NAME="FontWeight" VALUE="0">
+</OBJECT>
+
+
+<SCRIPT LANGUAGE="VBScript">
+sub btnGetURL_Click()
+	' Set the fraVisible frame directly to the requested URL
+
+    window.top.frames("guts").frames("fraVisible").location.href=edtURL.text
+
+    ' Pass the URL to the java applet, which will retrieve its HTML code
+    outstr = document.VisProg.goGet(edtURL.text)
+
+    ' Paste the HTML code into the fraCode frame. Make sure to keep open/
+	' close - otherwise, the browser doesn't know the operation is complete,
+	' and the little "e" spins forever. This code also prints a bit of
+	' formatting information around the actual source listing.
+
+    window.top.frames("guts").frames("fraCode").document.open
+	window.top.frames("guts").frames("fraCode").document.writeln("<HTML>")
+	window.top.frames("guts").frames("fraCode").document.writeln("<BODY BGCOLOR=#0000FF text=#FFFFFF>")
+
+    window.top.frames("guts").frames("fraCode").document.write(outstr)
+	window.top.frames("guts").frames("fraCode").document.writeln("</BODY></HTML>")
+	
+    window.top.frames("guts").frames("fraCode").document.close
+
+end sub
+</SCRIPT>
+
+</BODY>
+</HTML>

@@ -1,0 +1,50 @@
+#
+# LIPO32 / LIPOSUCTION32 makefile for Borland C++ 5.0
+#
+!ifdef HARDCORE
+# command line version
+PROJ = LIPO32
+LFLAGS = -ap
+CFLAGS = /DCMDLINE
+OBJS = CMDLINEUI.OBJ
+STARTUP_OBJ = C0X32.OBJ
+!else
+# GUI version
+PROJ = LIPOSUCTION32
+RSRC = LIPOGUI
+OBJS = LIPOGUI.OBJ
+STARTUP_OBJ = C0W32.OBJ
+LFLAGS = -aa -V4.0
+RESFILE = $(RSRC).RES
+!endif
+
+OBJS =  $(OBJS) MemoryMappedFile.OBJ EXEFILE.OBJ PEEXE.OBJ PEEXE2.OBJ \
+		PESection.OBJ LIPO32.OBJ DependencyList.OBJ
+
+CFLAGS = $(CFLAGS) -c -w -DWIN32_LEAN_AND_MEAN
+
+!if "$(DEBUG)" == "1"
+CFLAGS = $(CFLAGS) /D_DEBUG /v
+LFLAGS = $(LFLAGS)
+!else
+CFLAGS = $(CFLAGS) /O1 /DNDEBUG
+!endif
+
+$(PROJ).exe: $(RESFILE) $(OBJS)
+  TLINK32 @&&|
+$(LFLAGS) +
+$(STARTUP_OBJ) $(OBJS)
+$(PROJ).EXE
+
+import32.lib cw32.lib
+
+$(RESFILE)
+|
+
+.cpp.obj:
+  BCC32 $(CFLAGS) $<
+
+!ifndef HARDCORE
+$(RESFILE): $(RSRC).RC
+  BRC32 -r -x -ID:\BC5\INCLUDE $(RSRC).RC
+!endif

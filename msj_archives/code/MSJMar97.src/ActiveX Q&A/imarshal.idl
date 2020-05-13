@@ -1,0 +1,26 @@
+interface IMarshal : IUnknown {
+    HRESULT GetUnmarshalClass(
+        [in] REFIID riid, [in, unique] void *pv,
+        [in] DWORD dwDestContext, [in, unique] void *pvDestContext,
+        [in] DWORD mshlflags, [out] CLSID *pCid
+    );
+
+    HRESULT GetMarshalSizeMax(
+        [in] REFIID riid, [in, unique] void *pv,
+        [in] DWORD dwDestContext, [in, unique] void *pvDestContext,
+        [in] DWORD mshlflags, [out] DWORD *pSize
+    );
+
+    HRESULT MarshalInterface(
+        [in, unique] IStream *pStm, [in] REFIID riid,
+        [in, unique] void *pv, [in] DWORD dwDestContext,
+        [in, unique] void *pvDestContext, [in] DWORD mshlflags
+    );
+
+    HRESULT UnmarshalInterface([in, unique] IStream *pStm, [in] REFIID riid, 
+                               [out] void **ppv);
+
+    HRESULT ReleaseMarshalData([in, unique] IStream *pStm);
+
+    HRESULT DisconnectObject ([in] DWORD dwReserved);
+}

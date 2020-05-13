@@ -1,0 +1,71 @@
+
+[Version]
+Signature=$Windows 95$
+Class=UNKNOWN
+Provider=%String0%
+
+[ClassInstall]
+
+[DestinationDirs]
+SimpleCopyFiles=11		; NTKERN wants to load from system directory
+SimpleCopyFiles.nt=12		; load from system32\drivers
+
+[SourceDiskFiles]
+simple.sys=1
+
+[SourceDiskNames]
+1="Install disk",disk1
+
+[Manufacturer]
+%String1%=WCO
+
+[WCO]
+%String2%=SimpleInstall,*WCO1234
+
+;----------------------------------------------------------------------
+; Memphis install sections:
+
+[SimpleInstall]
+AddReg=SimpleAddReg
+LogConfig=SimpleLogConfig
+CopyFiles=SimpleCopyFiles
+
+[SimpleAddReg]
+HKR,,DevLoader,0,*ntkern
+HKR,,NTMPDriver,0,simple.sys
+
+[SimpleCopyFiles]
+simple.sys,,,2
+
+;----------------------------------------------------------------------
+; NT install sections:
+
+[SimpleInstall.nt]
+LogConfig=SimpleLogConfig
+CopyFiles=SimpleCopyFiles.nt
+
+[SimpleCopyFiles.nt]
+simple.sys,,,2
+
+[SimpleInstall.nt.Services]
+AddService=Simple,2,SimpleService
+
+[SimpleService]
+ServiceType=1		; SERVICE_KERNEL_DRIVER
+StartType=3			; SERVICE_DEMAND_START
+ErrorControl=1		; SERVICE_ERROR_NORMAL
+ServiceBinary=%12%\simple.sys
+
+;----------------------------------------------------------------------
+
+[SimpleLogConfig]
+ConfigPriority=NORMAL
+IOConfig=1@100-3ff%ffff(3ff::)
+IRQConfig=10,11,12,13,14
+
+[ControlFlags]
+
+[Strings]
+String0="Walter Oney Software"
+String1="Walter Oney Software"
+String2="Simple Device"

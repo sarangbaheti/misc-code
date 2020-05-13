@@ -1,0 +1,22 @@
+HKCR
+{
+	Trace.Trace.1 = s 'Trace Class'
+	{
+		CLSID = s '{76AA99F5-0228-11D1-B293-00AA004206E4}'
+	}
+	Trace.Trace = s 'Trace Class'
+	{
+		CurVer = s 'Trace.Trace.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {76AA99F5-0228-11D1-B293-00AA004206E4} = s 'Trace Class'
+		{
+			ProgID = s 'Trace.Trace.1'
+			VersionIndependentProgID = s 'Trace.Trace'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{C1262E41-0186-11D1-B292-00AA004206E4}'
+		}
+	}
+}

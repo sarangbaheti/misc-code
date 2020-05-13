@@ -1,0 +1,240 @@
+[COMPILER]
+
+INCLUDEDIRS=%(INCLUDE)
+COMPILE=concur|capture,nmake %n.obj
+MAKE=concur|capture,nmake
+DEBUG=,msdev [exename-here]
+USER1=concur|capture,nmake /A
+USER2=,msdev
+
+
+[FILES]
+D:\msj\ctr\ctr.cpp
+D:\msj\ctr\ctr.h
+D:\msj\ctr\events.cpp
+D:\msj\ctr\events.h
+D:\msj\ctr\winmain.cpp
+[STATE]
+SCREEN: 1280 1024 438 -2 794 1021 -1 -1 N 0 0 0 50
+CWD: d:\msncontent\CoreUI&Tools\COREUI
+BUFFER: BN="d:\vslick\vrestore.slk"
+BI: MA=1 254 1  TABS=1 9  WWS=3 IWT=0 ST=0 IN=0 BW=0 US=0 RO=0 SE=0 SN=0 BIN=0 MN=Fundamental	HM=0
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=4 BI=12 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\ctr\events.h"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.46 CL=1 LE=0 CX=0 CY=3 WI=4 BI=9 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\inetsdk\include\EXDISP.H"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.7496 CL=8 LE=0 CX=7 CY=48 WI=4 BI=3 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\msj\ctr\winmain.h"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.955 CL=25 LE=0 CX=24 CY=36 WI=4 BI=18 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\ctr\ctr.h"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.12618 CL=1 LE=0 CX=0 CY=8 WI=4 BI=7 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\ctr\winmain.cpp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.82 CL=1 LE=0 CX=0 CY=4 WI=4 BI=10 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\ctr\ctr.cpp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.61947 CL=1 LE=0 CX=0 CY=36 WI=4 BI=6 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="D:\msj\ctr\events.cpp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.1314 CL=1 LE=0 CX=0 CY=2 WI=4 BI=8 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\msncontent\CoreUI&Tools\COREUI\ctr.cpp"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=1 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.49056 CL=1 LE=0 CX=0 CY=54 WI=4 BI=16 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="d:\inetsdk\include\EXDISPID.H"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=0 ST=0 IN=2 BW=0 US=32000 RO=0 SE=0 SN=0 BIN=0 MN=C	HM=0
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=4 BI=5 HT=0 HN=0 HF=0 HC=4
+WINDOW: -442 4 1276 925 -1 -1 M  WF=0 WT=3 "OEM Fixed Font,10,0"
+BUFFER: BN="D:\msj\ctr\events.cpp"
+VIEW: LN=.1314 CL=1 LE=0 CX=1 CY=2 WI=5 BI=8 HT=0 HN=0 HF=0 HC=4
+CLIPBOARDS: 171 15 15 166
+:LINE 1 *
+DEFINE_GUID(DIID_DWebBrowserEvents,0xEAB22AC2,0x30C1,0x11CF,0xA7,0xEB,0x00,0x00,0xC0,0x5B,0xAE,0x0B);
+:CHAR 3 *
+DEFINE_GUID(SID_SMSJBrowser, something)
+DEFINE_GUID(DIID_MSJBrowser, something)
+
+:CHAR 22 *
+// debugging functions
+#ifdef _DEBUG
+
+extern VOID CDECL           _TRACE(LPSTR szFmt, ...);
+#define _SIDE_ASSERT(b)     _ASSERT(b)
+#define _SIDE_ASSERTE(b)    _ASSERTE(b)
+#define _NF_ASSERT(b, sz)   if (!(b)) \
+                                _TRACE("Non Fatal Assert (file %s, line %d): %s", \
+                                    __FILE__, __LINE__, (sz)); \
+                            else
+#define _NF_ASSERTE(b, sz)  _NF_ASSERT(b, sz)
+
+#else
+
+#define _TRACE  ;/##/
+#define _SIDE_ASSERT(b)     (b)
+#define _SIDE_ASSERTE(b)    (b)
+#define _NF_ASSERT(b, sz)
+#define _NF_ASSERTE(b, sz)
+
+#endif  // !_DEBUG
+
+:CHAR 24 *
+INT
+CNavBar::_RealizePalette(VOID)
+{
+    HDC         hDC;
+    HPALETTE    hPalOld;
+    INT         iRC;
+
+    if (!m_hWnd || !m_hPal)
+        return 0;
+
+    hDC = ::GetDC(HWnd());
+    hPalOld = ::SelectPalette(hDC, m_hPal, FALSE);
+    iRC  = ::RealizePalette(hDC);
+
+    if (iRC)
+        ::InvalidateRect(HWnd(), 0, FERASEBK);
+
+    ::SelectPalette(hDC, hPalOld, FALSE);
+    ::RealizePalette(hDC);
+
+    ::ReleaseDC(HWnd(), hDC);
+    return iRC;
+}
+
+:CHAR 41 *
+LRESULT
+CNavBar::PaletteChanged(WPARAM wParam)
+{
+    if (m_hWnd != (HWND) wParam)
+        _RealizePalette();
+
+    return 0;
+}
+
+
+BOOL
+CNavBar::QueryNewPalette(VOID)
+{
+    return _RealizePalette() ? TRUE : FALSE;
+}
+
+
+INT
+CNavBar::_RealizePalette(VOID)
+{
+    HDC         hDC;
+    HPALETTE    hPalOld;
+    INT         iRC;
+
+    if (!m_hWnd || !m_hPal)
+        return 0;
+
+    hDC = ::GetDC(HWnd());
+    hPalOld = ::SelectPalette(hDC, m_hPal, FALSE);
+    iRC  = ::RealizePalette(hDC);
+
+    if (iRC)
+        ::InvalidateRect(HWnd(), 0, FERASEBK);
+
+    ::SelectPalette(hDC, hPalOld, FALSE);
+    ::RealizePalette(hDC);
+
+    ::ReleaseDC(HWnd(), hDC);
+    return iRC;
+}
+
+:CHAR 7 *
+    // get the IWebBrowser interface - we can drive the OC late-bound,
+    // but it's a lot easier (and higher performance, to some degree) to
+    // do so early bound.
+    hr = m_pUnk->QueryInterface(IID_IWebBrowser, (LPVOID FAR *) &m_pWB);
+    if (hr)
+        goto Cleanup;
+
+:LINE 1 *
+    return _CallMethod(IDS_OLECMDFORWARD, &dp);
+:LINE 1 *
+    WCHAR      awch[CCHMAXURL];
+:CHAR 12 *
+        if (!::CreateWindow(
+                       "button",
+                       "Back",
+                       WS_CHILD | WS_VISIBLE,
+                       CXEDIT + CXEDIT + 2, 0, CXBUTTON, CYEDIT,
+                       hWnd,
+                       (HMENU) ID_BACK,
+                        0))
+        {
+            return -1;
+        }
+
+:CHAR 12 *
+        if (!::CreateWindow(
+                       "button",
+                       "Forward",
+                       WS_CHILD | WS_VISIBLE,
+                       x, 0, CXBUTTON, CYEDIT,
+                       hWnd,
+                       (HMENU) ID_BACK,
+                        0))
+        {
+            return -1;
+        }
+
+:CHAR 8 *
+
+    return m_pCtr->AddRef();
+}
+
+STDMETHODIMP_(ULONG)
+COleClientSite::Release(VOID)
+{
+
+:CHAR 2 *
+
+COleClientSite::Release(
+:CHAR 11 *
+oesn't matter whether it's visible or not.
+
+    return S_OK;
+}
+
+//+---------------------------------------------------------------------------
+//
+//  Member:     CInPlaceFrame::RequestBorderSpace
+//
+//  Synopsis:   IOleInPlaceFrame::RequestBorderSpace()
+//              inplace object 
+:CHAR 6 *
+
+//  Returns:    S_OK if we handled it, S_FALSE otherwise.
+//
+//----------------------------------------------------------------------------
+HRESULT
+CMSJOCCtr::_TransAccelerato
+:CHAR 5 *
+COleControlSite::COleControlSite(LPMSJOCCtr pCtr) : m_pCtr(pCtr)
+{
+
+}
+
+FILEHIST: 9
+d:\msncontent\CoreUI&Tools\COREUI\util.cpp
+d:\msncontent\CoreUI&Tools\COREUI\Navbar.cpp
+d:\msj\ctr\winmain.h
+d:\MSNCONTENT\CoreUI&Tools\COREUI\util.h
+d:\MSNCONTENT\CoreUI&Tools\COREUI\msnexp.cpp
+d:\MSNCONTENT\CoreUI&Tools\COREUI\ctr.h
+d:\msj\ctr\ctr.h
+d:\inetsdk\include\exdisp.h
+d:\msncontent\CoreUI&Tools\COREUI\ctr.cpp
+BOOKMARK: 1
+^1^ .52777 47 D:\msj\ctr\ctr.cpp
+PUSHTAG: 0 1
+PRINTER: 2
+
+

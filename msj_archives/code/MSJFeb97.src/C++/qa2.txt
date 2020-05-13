@@ -1,0 +1,51 @@
+QUESTION
+
+I've seen some applications with status bar panes that appear out-dented
+insted of the normal pushed-in look. Is there an easy way to do this with
+MFC?
+
+Gary Greco
+
+ANSWER
+
+Yes. MFC supports both styles of status bar panes, as controlled by the
+style flags #defined in afxext.h
+
+SBPS_NORMAL     // default (pushed in)
+SBPS_POPOUT     // popped-out
+SBPS_NOBORDERS  // neither in nor out (like prompt)
+SBPS_OWNERDRAW  // you can draw
+SBPS_DISABLED   // greyed text
+SBPS_STRETCH    // stretch to fill (like prompt)
+
+SBPS_STRETCH and SBPS_NOBORDERS are normally used for the first pane,
+which is the prompt ("Ready" indicator). SBPS_STRETCH tells MFC to use all
+the space remaining after the other fixed panes have been drawn;
+SBPS_NOBORDERS tells MFC to draw the pane with no borders--that is,
+neither pushed in nor popped out, but just blended into the background. As
+you have already guessed, SBPS_POPOUT tells MFC to draw the panes with the
+"popped-out" look you want. So. How do you change the styles?
+
+You can access individual status bar pane styles with
+CStatusBar::GetPaneStyle and CStatusBar::SetPaneStyle. For example, to get
+the popped-out look, you could add the following lines inside your
+CMainFrame::OnCreate function, after you've created the status bar.
+
+CStatusBar *psb = &m_wndStatusBar;
+UINT uFlags = psb->GetPaneStyle(ID_MY_PANE);
+uFlags |= SBPS_POPOUT;
+psb->SetPaneStyle(ID_MY_PANE, uFlags);
+
+You can also do it using the command update mechanism, the same mechanism
+MFC uses to let you control the state of menu items and toolbar buttons.
+In the case of a status bar pane, if you set the "checked" state, MFC
+gives the pane the SBPS_POPOUT style and draws the pane with the
+"popped-out" look (Figure [StatusPane.bmp]). This approach is better if
+you want to change the pane style dynamically. Figure [StatusPane Program
+listing--4 files in FIGS\StatusPane] shows a program I wrote that has menu
+commands to let you change whether the status bar panes are pushed in or
+popped out. The commands just set a BOOLean variable, m_bStatusBarOut,
+which the command update function for the CAPS, NUM and Scroll Lock
+indicators then uses to set whether the indicator pane is "checked" or
+not.
+

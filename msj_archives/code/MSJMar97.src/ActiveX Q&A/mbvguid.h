@@ -1,0 +1,9 @@
+#ifndef _MBVGUID_H
+#define _MBVGUID_H
+
+// {D07B8DA0-4BE1-11d0-B3B3-0080C7BC7884}
+DEFINE_GUID(CLSID_MarshalByValue, 
+0xd07b8da0, 0x4be1, 0x11d0, 0xb3, 0xb3, 0x0, 0x80, 0xc7, 0xbc, 0x78, 0x84);
+
+#endif
+

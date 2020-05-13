@@ -1,0 +1,92 @@
+//=================================================
+// Matt Pietrek
+// Microsoft Systems Journal, March 1997
+// Pseudocode for ring 3 portion of DispatchMessage
+//=================================================
+
+LONG DispatchMessageA( CONST MSG *lpmsg )
+{
+    return DispatchMessageWorker( lpmsg, 1 ); // 0 == UNICODE, 1 = ANSI
+}
+
+LONG DispatchMessageWorker( CONST MSG *lpmsg, BOOL fAnsi )
+{
+    if ( lpmsg->message == 0xFFFE0000 )
+    {
+        _UserSetLastError( ERROR_INVALID_PARAMETER );
+        return 0;       
+    }
+
+    // If we have a non-null HWND, convert it to a pointer to the user mode
+    // WND structure.  We'll use this ptr extensively.
+    if ( lpmsg->hwnd )
+    {
+        pWnd = @ValidateHwnd( lpmsg->hwnd );
+        if ( !pWnd )
+            return 0;
+    }
+    else
+        pWnd = 0;
+
+    if ( (lpmsg->message != WM_TIMER) && (lpmsg->message != WM_SYSTIMER) )
+    {
+
+begin_normal_message:
+
+        if ( pWnd == 0 )    // Sanity check.  We'd better have a valid window!
+            return 0;
+
+        DWORD save_wParam = lpmsg->wParam;
+
+        if ( (lpmsg->message != WM_PAINT) && !(pWnd->someFlags9E & 4) )
+        {
+            if ( IsWindowUnicode( lpmsg->hwnd ) )
+            {
+                if ( fAnsi )
+                    RtlMBMessageWParamCharToWCS( lpmsg->message, save_wParam );
+                else
+                    RtlWCSMessageWParamCharToMB( lpmsg->message, save_wParam );
+            }
+
+            // Is the high bit in the wndproc address set?  If so, this is a
+            // 16 bit window, and pfnWndProc is a 16:16 far address.  To get
+            // the real address, turn off the high bit (0x80000000)
+            if ( 0 == (pWnd->pfnWndProc & 0x80000000) )
+            {
+                pWnd->pfnWndProc(   lpmsg->hwnd, lpmsg->message,
+                                    lpmsg->wParam, lpmsg->lParam );
+            }
+            else
+            {
+                pfnWowWndProcEx( lpmsg->hwnd, lpmsg->message, save_wParam,
+                                 lpmsg->lParam, lpmsg->message, pWnd->0x90 );
+            }
+        }
+        else    // WM_PAINT, or something else...
+        {
+            if ( fAnsi )
+                _RtlMBMessageWParamCharToWCS( lpmsg->message, save_wParam );        
+
+            _NtUserDispatchMessage( lpmsg );        
+        }
+
+        lpmsg->wParam = save_wParam;
+    }
+    else    // WM_TIMER && WM_SYSTIMER
+    {
+        TIMERPROC pfnTimerCallback = lpmsg->lParam;
+
+        if ( pfnTimerCallback == 0 )
+            goto begin_normal_message;
+
+        if ( lpmsg->message == WM_SYSTIMER )
+            return _NtUserDispatchMessage( lpmsg );
+
+        return pfnTimerCallback(    lpmsg->hwnd,
+                                    lpmsg->message,
+                                    lpmsg->wParam,      // wTimerId
+                                    GetTickCount() );   // actually, an inline
+                                                        // version of the code
+                                                        // in KERNEL32.DLL
+    }
+}
